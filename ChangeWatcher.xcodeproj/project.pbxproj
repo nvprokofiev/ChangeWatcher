@@ -72,6 +72,7 @@
 		67FC84EA25B53E130037F61C /* ChangeWatcher */ = {
 			isa = PBXGroup;
 			children = (
+				67FC853725B5F4530037F61C /* Extensions */,
 				67FC852925B5DEB70037F61C /* Common */,
 				67FC852025B5DCFD0037F61C /* Protocols */,
 				67FC851C25B5444C0037F61C /* Utilities */,
@@ -131,6 +132,7 @@
 		67FC851C25B5444C0037F61C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				67FC853825B5F4A60037F61C /* RequestProvider */,
 				67FC851D25B5445E0037F61C /* WebCacheCleaner.swift */,
 			);
 			path = Utilities;
@@ -161,6 +163,20 @@
 				67FC853125B5E5170037F61C /* ToolbarButtonView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		67FC853725B5F4530037F61C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		67FC853825B5F4A60037F61C /* RequestProvider */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RequestProvider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

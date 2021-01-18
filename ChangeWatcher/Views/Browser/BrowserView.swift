@@ -32,9 +32,7 @@ struct BrowserView: View {
                     BrowserWebView(webView: webViewStore.webView )
                     progressView
                 }
-                BrowserToolbarView(backButtonHandler: (webViewStore.webView.canGoBack, webViewStore.goBack),
-                                   forwardButtonHandler: (webViewStore.webView.canGoForward, webViewStore.goForward))
-                
+                toolbarView
             }
             .ignoresSafeArea(.all, edges: .bottom)
             
@@ -42,8 +40,6 @@ struct BrowserView: View {
 //                AddWatcherView(viewModel: AddWatcherViewModel(store: webViewStore))
 //            }
             
-        }.onAppear {
-            webViewStore.loadQuery("")
         }
     }
     
@@ -59,6 +55,11 @@ struct BrowserView: View {
             )
         }
         return AnyView(EmptyView())
+    }
+    
+    private var toolbarView: some View {
+        AnyView(BrowserToolbarView(backButtonHandler: (webViewStore.webView.canGoBack, webViewStore.goBack),
+                           forwardButtonHandler: (webViewStore.webView.canGoForward, webViewStore.goForward)))
     }
 }
 
