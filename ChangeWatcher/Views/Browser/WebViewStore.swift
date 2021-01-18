@@ -73,10 +73,9 @@ class WebViewStore: NSObject, ObservableObject {
     
     
     func loadQuery(_ query: String) {
-//        let provider = SearchRequestProvider(for: query)
-//
-//        guard let request = provider.request else { return }
-        let request = URLRequest(url: URL(string: zara)!)
+        let provider = SearchRequestProvider(for: query)
+        
+        guard let request = provider.request else { return }
         webView.load(request)
     }
     

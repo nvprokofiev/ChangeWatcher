@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,11 @@
 		67FC852725B5DDD60037F61C /* BrowserToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC852525B5DDD60037F61C /* BrowserToolbarView.swift */; };
 		67FC852F25B5DF200037F61C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC852E25B5DF200037F61C /* Constants.swift */; };
 		67FC853225B5E5170037F61C /* ToolbarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC853125B5E5170037F61C /* ToolbarButtonView.swift */; };
+		67FC853B25B5F5460037F61C /* PublicSuffix in Frameworks */ = {isa = PBXBuildFile; productRef = 67FC853A25B5F5460037F61C /* PublicSuffix */; };
+		67FC853E25B5F5770037F61C /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC853D25B5F5770037F61C /* RequestType.swift */; };
+		67FC854125B5F5A10037F61C /* SearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC854025B5F5A10037F61C /* SearchEngine.swift */; };
+		67FC854425B5F7850037F61C /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC854325B5F7850037F61C /* String+.swift */; };
+		67FC854725B5FEF00037F61C /* SearchRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC854625B5FEF00037F61C /* SearchRequestProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,10 @@
 		67FC852525B5DDD60037F61C /* BrowserToolbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserToolbarView.swift; sourceTree = "<group>"; };
 		67FC852E25B5DF200037F61C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		67FC853125B5E5170037F61C /* ToolbarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarButtonView.swift; sourceTree = "<group>"; };
+		67FC853D25B5F5770037F61C /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		67FC854025B5F5A10037F61C /* SearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEngine.swift; sourceTree = "<group>"; };
+		67FC854325B5F7850037F61C /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		67FC854625B5FEF00037F61C /* SearchRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequestProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67FC853B25B5F5460037F61C /* PublicSuffix in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +178,7 @@
 		67FC853725B5F4530037F61C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				67FC854325B5F7850037F61C /* String+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -175,6 +186,9 @@
 		67FC853825B5F4A60037F61C /* RequestProvider */ = {
 			isa = PBXGroup;
 			children = (
+				67FC853D25B5F5770037F61C /* RequestType.swift */,
+				67FC854025B5F5A10037F61C /* SearchEngine.swift */,
+				67FC854625B5FEF00037F61C /* SearchRequestProvider.swift */,
 			);
 			path = RequestProvider;
 			sourceTree = "<group>";
@@ -195,6 +209,9 @@
 			dependencies = (
 			);
 			name = ChangeWatcher;
+			packageProductDependencies = (
+				67FC853A25B5F5460037F61C /* PublicSuffix */,
+			);
 			productName = ChangeWatcher;
 			productReference = 67FC84E825B53E130037F61C /* ChangeWatcher.app */;
 			productType = "com.apple.product-type.application";
@@ -222,6 +239,9 @@
 				Base,
 			);
 			mainGroup = 67FC84DF25B53E130037F61C;
+			packageReferences = (
+				67FC853925B5F5460037F61C /* XCRemoteSwiftPackageReference "PublicSuffix-Swift" */,
+			);
 			productRefGroup = 67FC84E925B53E130037F61C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -248,11 +268,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67FC854725B5FEF00037F61C /* SearchRequestProvider.swift in Sources */,
 				67FC853225B5E5170037F61C /* ToolbarButtonView.swift in Sources */,
 				67FC852625B5DDD60037F61C /* BrowserSearchView.swift in Sources */,
+				67FC853E25B5F5770037F61C /* RequestType.swift in Sources */,
+				67FC854125B5F5A10037F61C /* SearchEngine.swift in Sources */,
 				67FC852F25B5DF200037F61C /* Constants.swift in Sources */,
 				67FC84EE25B53E130037F61C /* ContentView.swift in Sources */,
 				67FC851925B5422B0037F61C /* BrowserWebView.swift in Sources */,
+				67FC854425B5F7850037F61C /* String+.swift in Sources */,
 				67FC84EC25B53E130037F61C /* ChangeWatcherApp.swift in Sources */,
 				67FC851A25B5422B0037F61C /* WebViewStore.swift in Sources */,
 				67FC851E25B5445E0037F61C /* WebCacheCleaner.swift in Sources */,
@@ -448,6 +472,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		67FC853925B5F5460037F61C /* XCRemoteSwiftPackageReference "PublicSuffix-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jameshurst/PublicSuffix-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		67FC853A25B5F5460037F61C /* PublicSuffix */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67FC853925B5F5460037F61C /* XCRemoteSwiftPackageReference "PublicSuffix-Swift" */;
+			productName = PublicSuffix;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 67FC84E025B53E130037F61C /* Project object */;
 }
