@@ -22,7 +22,7 @@ class WebViewStore: NSObject, ObservableObject {
     
     @Published var longTapDetected: Bool = false
     
-//    var watchingItem: WatchingItem?
+    var watchableItem: Watchable?
     
     private var observers: [NSKeyValueObservation] = []
     
@@ -76,7 +76,7 @@ class WebViewStore: NSObject, ObservableObject {
 //        let provider = SearchRequestProvider(for: query)
 //
 //        guard let request = provider.request else { return }
-        let request = URLRequest(url: URL(string: "https://en.m.wikipedia.org/wiki/Old_Navy")!)
+        let request = URLRequest(url: URL(string: zara)!)
         webView.load(request)
     }
     

@@ -16,6 +16,11 @@
 		67FC851925B5422B0037F61C /* BrowserWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC851625B5422B0037F61C /* BrowserWebView.swift */; };
 		67FC851A25B5422B0037F61C /* WebViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC851725B5422B0037F61C /* WebViewStore.swift */; };
 		67FC851E25B5445E0037F61C /* WebCacheCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC851D25B5445E0037F61C /* WebCacheCleaner.swift */; };
+		67FC852225B5DD1F0037F61C /* Watchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC852125B5DD1F0037F61C /* Watchable.swift */; };
+		67FC852625B5DDD60037F61C /* BrowserSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC852425B5DDD60037F61C /* BrowserSearchView.swift */; };
+		67FC852725B5DDD60037F61C /* BrowserToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC852525B5DDD60037F61C /* BrowserToolbarView.swift */; };
+		67FC852F25B5DF200037F61C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC852E25B5DF200037F61C /* Constants.swift */; };
+		67FC853225B5E5170037F61C /* ToolbarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC853125B5E5170037F61C /* ToolbarButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		67FC851625B5422B0037F61C /* BrowserWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserWebView.swift; sourceTree = "<group>"; };
 		67FC851725B5422B0037F61C /* WebViewStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewStore.swift; sourceTree = "<group>"; };
 		67FC851D25B5445E0037F61C /* WebCacheCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCacheCleaner.swift; sourceTree = "<group>"; };
+		67FC852125B5DD1F0037F61C /* Watchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watchable.swift; sourceTree = "<group>"; };
+		67FC852425B5DDD60037F61C /* BrowserSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserSearchView.swift; sourceTree = "<group>"; };
+		67FC852525B5DDD60037F61C /* BrowserToolbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserToolbarView.swift; sourceTree = "<group>"; };
+		67FC852E25B5DF200037F61C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		67FC853125B5E5170037F61C /* ToolbarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +72,8 @@
 		67FC84EA25B53E130037F61C /* ChangeWatcher */ = {
 			isa = PBXGroup;
 			children = (
+				67FC852925B5DEB70037F61C /* Common */,
+				67FC852025B5DCFD0037F61C /* Protocols */,
 				67FC851C25B5444C0037F61C /* Utilities */,
 				67FC84FB25B53FB10037F61C /* App */,
 				67FC850025B540940037F61C /* Model */,
@@ -110,8 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				67FC851525B5422B0037F61C /* BrowserView.swift */,
-				67FC851625B5422B0037F61C /* BrowserWebView.swift */,
 				67FC851725B5422B0037F61C /* WebViewStore.swift */,
+				67FC853525B5E5C70037F61C /* Components */,
 			);
 			path = Browser;
 			sourceTree = "<group>";
@@ -122,6 +134,33 @@
 				67FC851D25B5445E0037F61C /* WebCacheCleaner.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		67FC852025B5DCFD0037F61C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				67FC852125B5DD1F0037F61C /* Watchable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		67FC852925B5DEB70037F61C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				67FC852E25B5DF200037F61C /* Constants.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		67FC853525B5E5C70037F61C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				67FC851625B5422B0037F61C /* BrowserWebView.swift */,
+				67FC852425B5DDD60037F61C /* BrowserSearchView.swift */,
+				67FC852525B5DDD60037F61C /* BrowserToolbarView.swift */,
+				67FC853125B5E5170037F61C /* ToolbarButtonView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,11 +232,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67FC853225B5E5170037F61C /* ToolbarButtonView.swift in Sources */,
+				67FC852625B5DDD60037F61C /* BrowserSearchView.swift in Sources */,
+				67FC852F25B5DF200037F61C /* Constants.swift in Sources */,
 				67FC84EE25B53E130037F61C /* ContentView.swift in Sources */,
 				67FC851925B5422B0037F61C /* BrowserWebView.swift in Sources */,
 				67FC84EC25B53E130037F61C /* ChangeWatcherApp.swift in Sources */,
 				67FC851A25B5422B0037F61C /* WebViewStore.swift in Sources */,
 				67FC851E25B5445E0037F61C /* WebCacheCleaner.swift in Sources */,
+				67FC852225B5DD1F0037F61C /* Watchable.swift in Sources */,
+				67FC852725B5DDD60037F61C /* BrowserToolbarView.swift in Sources */,
 				67FC850925B541110037F61C /* UIViewContainerView.swift in Sources */,
 				67FC851825B5422B0037F61C /* BrowserView.swift in Sources */,
 			);
