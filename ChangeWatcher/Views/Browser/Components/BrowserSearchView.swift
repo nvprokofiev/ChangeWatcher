@@ -22,7 +22,6 @@ struct BrowserSearchView: View {
                       }
             )
             .font(.subheadline)
-            .foregroundColor(.black)
             .frame(height: constants.height)
             .padding(.horizontal, 16)
             .background(RoundedRectangle(cornerRadius: constants.height / 2)

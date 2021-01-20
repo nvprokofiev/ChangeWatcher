@@ -12,46 +12,50 @@ class SearchRequestProvider {
     
     private var query: String
     private var searchEngine: SearchEngine
-    private var domainComponents: DomainComponents?
     
-    init(for query: String) {
+    init(for query: String, engine: SearchEngine) {
         self.query = query
-        self.domainComponents = SuffixList.default.parse(query)
-        self.searchEngine = .google(query)
+        self.searchEngine = engine
     }
 
-    var request: URLRequest? {
+    func getURLRequest(with completion: @escaping (Result<URLRequest, SearchRequestError>)->()) {
         if let url = url {
-            return RequestType.url(url).request
+            checkRechability(for: url) { success in
+                if success {
+                    let request = URLRequest(url: url)
+                    completion(.success(request))
+                } else {
+                    completion(.failure(.urlNotReachable))
+                }
+            }
         } else {
-            return RequestType.search(using: searchEngine).request
+            guard let request = searchEngine.buildSearchURLRequest(for: query) else {
+                return completion(.failure(.buildRequestFailure))
+            }
+            completion(.success(request))
         }
     }
-    
-    #warning("Check how url deals wth queries like https://www.google.com") //doesn't holds
-    
+
     private var url: URL? {
 
-        if query.isValidURL() {
-            #warning("thinks that https://www.google is valid url")
-            return URL(string: query)
-        }
+        guard let url = URL(string: query) else { return nil }
+        guard var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false) else { return nil }
+        guard let domainComponents = SuffixList.default.parse(query) else { return nil }
         
-        guard let components = domainComponents else { return nil }
-
-        if components.hasKnownTLD {
-            
+        if domainComponents.hasKnownTLD {
+            if urlComponents.scheme == nil {
+                urlComponents.scheme = "https"
+            }
+            return urlComponents.url
         }
-            
-            
-            
-            
-//            if let domainName = domainName {
-//                let prefix = "https://" + (domainName.subdomain ?? "www") + "."
-//                let urlString = prefix + domainName.domain
-//                return URL(string: urlString)
-//            }
         return nil
     }
+    
+    private func checkRechability(for url: URL, _ completion: @escaping (Bool)->()) {
+        NetworkService().ping(url) { success in
+            DispatchQueue.main.async {
+                completion(success)
+            }
+        }
+    }
 }
-

@@ -24,6 +24,8 @@ class WebViewStore: NSObject, ObservableObject {
     
     var watchableItem: Watchable?
     
+    private var searchEngine = YandexSearchEngine()
+    
     private var observers: [NSKeyValueObservation] = []
     
     override init() {
@@ -73,10 +75,17 @@ class WebViewStore: NSObject, ObservableObject {
     
     
     func loadQuery(_ query: String) {
-        let provider = SearchRequestProvider(for: query)
+        let provider = SearchRequestProvider(for: query, engine: searchEngine)
         
-        guard let request = provider.request else { return }
-        webView.load(request)
+        provider.getURLRequest { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let request):
+                self.webView.load(request)
+            }
+        }
     }
     
     func goBack() {

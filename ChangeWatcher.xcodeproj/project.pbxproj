@@ -22,10 +22,13 @@
 		67FC852F25B5DF200037F61C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC852E25B5DF200037F61C /* Constants.swift */; };
 		67FC853225B5E5170037F61C /* ToolbarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC853125B5E5170037F61C /* ToolbarButtonView.swift */; };
 		67FC853B25B5F5460037F61C /* PublicSuffix in Frameworks */ = {isa = PBXBuildFile; productRef = 67FC853A25B5F5460037F61C /* PublicSuffix */; };
-		67FC853E25B5F5770037F61C /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC853D25B5F5770037F61C /* RequestType.swift */; };
 		67FC854125B5F5A10037F61C /* SearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC854025B5F5A10037F61C /* SearchEngine.swift */; };
 		67FC854425B5F7850037F61C /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC854325B5F7850037F61C /* String+.swift */; };
 		67FC854725B5FEF00037F61C /* SearchRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC854625B5FEF00037F61C /* SearchRequestProvider.swift */; };
+		67FC856125B6A16F0037F61C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC856025B6A16F0037F61C /* NetworkService.swift */; };
+		67FC857125B7E8070037F61C /* GoogleSearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC857025B7E8070037F61C /* GoogleSearchEngine.swift */; };
+		67FC857425B7E8360037F61C /* YandexSearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC857325B7E8360037F61C /* YandexSearchEngine.swift */; };
+		67FC857825B7EFC40037F61C /* SearchRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC857725B7EFC40037F61C /* SearchRequestError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,10 +48,13 @@
 		67FC852525B5DDD60037F61C /* BrowserToolbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserToolbarView.swift; sourceTree = "<group>"; };
 		67FC852E25B5DF200037F61C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		67FC853125B5E5170037F61C /* ToolbarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarButtonView.swift; sourceTree = "<group>"; };
-		67FC853D25B5F5770037F61C /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		67FC854025B5F5A10037F61C /* SearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEngine.swift; sourceTree = "<group>"; };
 		67FC854325B5F7850037F61C /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		67FC854625B5FEF00037F61C /* SearchRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequestProvider.swift; sourceTree = "<group>"; };
+		67FC856025B6A16F0037F61C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		67FC857025B7E8070037F61C /* GoogleSearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSearchEngine.swift; sourceTree = "<group>"; };
+		67FC857325B7E8360037F61C /* YandexSearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexSearchEngine.swift; sourceTree = "<group>"; };
+		67FC857725B7EFC40037F61C /* SearchRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequestError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 		67FC84EA25B53E130037F61C /* ChangeWatcher */ = {
 			isa = PBXGroup;
 			children = (
+				67FC855F25B6A1460037F61C /* Networking */,
 				67FC853725B5F4530037F61C /* Extensions */,
 				67FC852925B5DEB70037F61C /* Common */,
 				67FC852025B5DCFD0037F61C /* Protocols */,
@@ -186,11 +193,29 @@
 		67FC853825B5F4A60037F61C /* RequestProvider */ = {
 			isa = PBXGroup;
 			children = (
-				67FC853D25B5F5770037F61C /* RequestType.swift */,
-				67FC854025B5F5A10037F61C /* SearchEngine.swift */,
+				67FC856F25B7E7EF0037F61C /* SearchEngine */,
 				67FC854625B5FEF00037F61C /* SearchRequestProvider.swift */,
+				67FC857725B7EFC40037F61C /* SearchRequestError.swift */,
 			);
 			path = RequestProvider;
+			sourceTree = "<group>";
+		};
+		67FC855F25B6A1460037F61C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				67FC856025B6A16F0037F61C /* NetworkService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		67FC856F25B7E7EF0037F61C /* SearchEngine */ = {
+			isa = PBXGroup;
+			children = (
+				67FC854025B5F5A10037F61C /* SearchEngine.swift */,
+				67FC857025B7E8070037F61C /* GoogleSearchEngine.swift */,
+				67FC857325B7E8360037F61C /* YandexSearchEngine.swift */,
+			);
+			path = SearchEngine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,12 +293,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67FC857425B7E8360037F61C /* YandexSearchEngine.swift in Sources */,
 				67FC854725B5FEF00037F61C /* SearchRequestProvider.swift in Sources */,
 				67FC853225B5E5170037F61C /* ToolbarButtonView.swift in Sources */,
 				67FC852625B5DDD60037F61C /* BrowserSearchView.swift in Sources */,
-				67FC853E25B5F5770037F61C /* RequestType.swift in Sources */,
 				67FC854125B5F5A10037F61C /* SearchEngine.swift in Sources */,
+				67FC856125B6A16F0037F61C /* NetworkService.swift in Sources */,
+				67FC857125B7E8070037F61C /* GoogleSearchEngine.swift in Sources */,
 				67FC852F25B5DF200037F61C /* Constants.swift in Sources */,
+				67FC857825B7EFC40037F61C /* SearchRequestError.swift in Sources */,
 				67FC84EE25B53E130037F61C /* ContentView.swift in Sources */,
 				67FC851925B5422B0037F61C /* BrowserWebView.swift in Sources */,
 				67FC854425B5F7850037F61C /* String+.swift in Sources */,
