@@ -23,7 +23,7 @@ extension WKUserScript {
         var fileName: String {
             switch self {
             case .longPressEvent:
-                return "long-press-event.min"
+                return "long-press-event"
 //            case .cssSelectorGenerator:
 //                return "css-selector-generator"
 //            case .disableTextSelection:

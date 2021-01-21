@@ -64,9 +64,8 @@ class WebViewStore: NSObject, ObservableObject {
     private func setupWebView() {
         let configuration = WKWebViewConfiguration()
         
-//        WKUserScript.CustomScripts.allCases.forEach {
-//            configuration.add(script: $0, scriptMessageHandler: self)
-//        }
+        configuration.add(script: .longPressEvent, scriptMessageHandler: self)
+        
         webView = WKWebView(frame: .zero, configuration: configuration)
         webView.allowsLinkPreview = false
         webView.navigationDelegate = self

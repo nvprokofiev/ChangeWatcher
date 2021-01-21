@@ -36,10 +36,10 @@
 		67FC858B25B92BF30037F61C /* highlight-selected-element.js in Resources */ = {isa = PBXBuildFile; fileRef = 67FC858025B92BF30037F61C /* highlight-selected-element.js */; };
 		67FC858C25B92BF30037F61C /* css-selector-generator.js in Resources */ = {isa = PBXBuildFile; fileRef = 67FC858125B92BF30037F61C /* css-selector-generator.js */; };
 		67FC858D25B92BF30037F61C /* finder.js in Resources */ = {isa = PBXBuildFile; fileRef = 67FC858225B92BF30037F61C /* finder.js */; };
-		67FC858E25B92BF30037F61C /* long-press-event.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 67FC858325B92BF30037F61C /* long-press-event.min.js */; };
 		67FC859025B92BF30037F61C /* element-xpath.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 67FC858625B92BF30037F61C /* element-xpath.min.js */; };
 		67FC859625B92CBD0037F61C /* WKUserScript+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC859425B92CBD0037F61C /* WKUserScript+.swift */; };
 		67FC859725B92CBD0037F61C /* WKWebViewConfiguration+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC859525B92CBD0037F61C /* WKWebViewConfiguration+.swift */; };
+		67FC859C25B932190037F61C /* long-press-event.js in Resources */ = {isa = PBXBuildFile; fileRef = 67FC859B25B932190037F61C /* long-press-event.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,10 +73,10 @@
 		67FC858025B92BF30037F61C /* highlight-selected-element.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "highlight-selected-element.js"; sourceTree = "<group>"; };
 		67FC858125B92BF30037F61C /* css-selector-generator.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "css-selector-generator.js"; sourceTree = "<group>"; };
 		67FC858225B92BF30037F61C /* finder.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = finder.js; sourceTree = "<group>"; };
-		67FC858325B92BF30037F61C /* long-press-event.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "long-press-event.min.js"; sourceTree = "<group>"; };
 		67FC858625B92BF30037F61C /* element-xpath.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "element-xpath.min.js"; sourceTree = "<group>"; };
 		67FC859425B92CBD0037F61C /* WKUserScript+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WKUserScript+.swift"; sourceTree = "<group>"; };
 		67FC859525B92CBD0037F61C /* WKWebViewConfiguration+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WKWebViewConfiguration+.swift"; sourceTree = "<group>"; };
+		67FC859B25B932190037F61C /* long-press-event.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "long-press-event.js"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,7 +250,7 @@
 				67FC857D25B92BF30037F61C /* CSS */,
 				67FC858125B92BF30037F61C /* css-selector-generator.js */,
 				67FC858225B92BF30037F61C /* finder.js */,
-				67FC858325B92BF30037F61C /* long-press-event.min.js */,
+				67FC859B25B932190037F61C /* long-press-event.js */,
 				67FC858625B92BF30037F61C /* element-xpath.min.js */,
 			);
 			path = JS;
@@ -339,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67FC858A25B92BF30037F61C /* disable-text-selection.js in Resources */,
+				67FC859C25B932190037F61C /* long-press-event.js in Resources */,
 				67FC859025B92BF30037F61C /* element-xpath.min.js in Resources */,
 				67FC84F325B53E150037F61C /* Preview Assets.xcassets in Resources */,
 				67FC84F025B53E150037F61C /* Assets.xcassets in Resources */,
@@ -347,7 +348,6 @@
 				67FC858C25B92BF30037F61C /* css-selector-generator.js in Resources */,
 				67FC858925B92BF30037F61C /* remove-all-highlights.js in Resources */,
 				67FC858B25B92BF30037F61C /* highlight-selected-element.js in Resources */,
-				67FC858E25B92BF30037F61C /* long-press-event.min.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
