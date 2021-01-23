@@ -13,7 +13,7 @@ struct GoogleSearchEngine: SearchEngine {
     let path = "/search"
     
     func configureURLComponents(for query: String) -> URLComponents {
-        let queryItem = URLQueryItem(name: "s", value: query)
+        let queryItem = URLQueryItem(name: "q", value: query)
         var components = defaultComponents
         components.queryItems?.append(queryItem)
         return components

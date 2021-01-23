@@ -24,7 +24,7 @@ class WebViewStore: NSObject, ObservableObject {
     
     var watchableItem: Watchable?
     
-    private var searchEngine = YandexSearchEngine()
+    private var searchEngine = GoogleSearchEngine()
     
     private var observers: [NSKeyValueObservation] = []
     
