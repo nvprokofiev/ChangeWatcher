@@ -48,7 +48,7 @@
             window.mozRequestAnimationFrame ||
             window.oRequestAnimationFrame ||
             window.msRequestAnimationFrame || function(callback) {
-                window.setTimeout(callback, 800 / 60);
+                window.setTimeout(callback, 1500 / 60);
             };
     })();
 
@@ -169,7 +169,7 @@
         var el = e.target;
 
         // get delay from html attribute if it exists, otherwise default to 1500
-        var longPressDelayInMs = parseInt(getNearestAttribute(el, 'data-long-press-delay', '1500'), 10); // default 1500
+        var longPressDelayInMs = parseInt(getNearestAttribute(el, 'data-long-press-delay', '800'), 10); // default 1500
 
         // start the timer
         timer = requestTimeout(fireLongPressEvent.bind(el, e), longPressDelayInMs);
@@ -258,3 +258,22 @@
     document.addEventListener(mouseDown, mouseDownHandler, true); // <- start
 
 }(window, document));
+        
+document.addEventListener("long-press", function (e) {
+
+    e.preventDefault();
+    var element = e.target;
+    var text = e.target.textContent;
+    if (text.trim().length == 0) {
+        return
+    }
+    var value = element.innerText.replace(/(\r\n|\n|\r)/gm, "");;
+//    let my_selector_generator = new CssSelectorGenerator();
+//    let selector = my_selector_generator.getSelector(element);
+//    let path = window.location.href;
+//    let message = {"selector": selector, "value": value, "urlString": path};
+//    element.classList.add('any-update-selected')
+            
+    window.webkit.messageHandlers['longPressEvent'].postMessage(text);
+})
+

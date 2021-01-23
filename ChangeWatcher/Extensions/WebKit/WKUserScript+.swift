@@ -16,7 +16,7 @@ extension WKUserScript {
 //        case removeAllHighlights
 //        case finder
 //        case cssSelectorGenerator
-//        case disableTextSelection
+        case disableTextSelection
     
         var name: String { return rawValue }
         
@@ -26,8 +26,8 @@ extension WKUserScript {
                 return "long-press-event"
 //            case .cssSelectorGenerator:
 //                return "css-selector-generator"
-//            case .disableTextSelection:
-//                return "disable-text-selection"
+            case .disableTextSelection:
+                return "disable-text-selection"
 //            case .highlightSelectedElement:
 //                return "highlight-selected-element"
 //            case .removeAllHighlights:

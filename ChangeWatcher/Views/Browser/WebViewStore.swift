@@ -24,7 +24,7 @@ class WebViewStore: NSObject, ObservableObject {
     
     var watchableItem: Watchable?
     
-    private var searchEngine = YandexSearchEngine()
+    private var searchEngine = GoogleSearchEngine()
     
     private var observers: [NSKeyValueObservation] = []
     
@@ -65,7 +65,8 @@ class WebViewStore: NSObject, ObservableObject {
         let configuration = WKWebViewConfiguration()
         
         configuration.add(script: .longPressEvent, scriptMessageHandler: self)
-        
+        configuration.add(script: .disableTextSelection, scriptMessageHandler: self)
+
         webView = WKWebView(frame: .zero, configuration: configuration)
         webView.allowsLinkPreview = false
         webView.navigationDelegate = self
@@ -112,13 +113,18 @@ extension WebViewStore: WKScriptMessageHandler  {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
 //        longTapDetected.toggle()
-//        guard let script = WKUserScript.CustomScripts.init(rawValue: message.name) else {
-//            print("LONG TAP DETECTED - \(message.name)")
-//            return
-//        }
+        guard let script = WKUserScript.CustomScripts(rawValue: message.name) else { return }
+        
+        switch script {
+        case .longPressEvent:
+            print("-----------", message.body)
+        default:
+            return
+        }
+        
 //        guard script == .longPressEvent else { return }
 //        guard let watchingItem = WathingItemParser.parse(from: message.body) else { return }
-//
+
 //        self.watchingItem = watchingItem
     }
     
