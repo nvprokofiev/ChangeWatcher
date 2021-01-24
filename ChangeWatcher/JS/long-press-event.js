@@ -267,12 +267,25 @@ document.addEventListener("long-press", function (e) {
     if (text.trim().length == 0) {
         return
     }
+//
+//    const wrapper = document.createElement('span');
+//    wrapper.classList.add('watch-element');
+//    wrapper.innerText = element.innerText
+//
+//    element.parentNode.insertBefore(wrapper, element);
+
+//    wrap(element, document.createElement('span'));
+    element.classList.add('watch-element')
+    
     var value = element.innerText.replace(/(\r\n|\n|\r)/gm, "");;
 //    let my_selector_generator = new CssSelectorGenerator();
 //    let selector = my_selector_generator.getSelector(element);
 //    let path = window.location.href;
 //    let message = {"selector": selector, "value": value, "urlString": path};
-//    element.classList.add('any-update-selected')
+    
+    // example: wrapping an anchor with class "wrap_me" into a new div element
+
+
             
     window.webkit.messageHandlers['longPressEvent'].postMessage(text);
 })

@@ -12,8 +12,8 @@ extension WKUserScript {
     
     enum CustomScripts: String, CaseIterable {
         case longPressEvent
-//        case highlightSelectedElement
-//        case removeAllHighlights
+        case highlightSelectedElement
+        case removeAllHighlights
 //        case finder
 //        case cssSelectorGenerator
         case disableTextSelection
@@ -28,10 +28,10 @@ extension WKUserScript {
 //                return "css-selector-generator"
             case .disableTextSelection:
                 return "disable-text-selection"
-//            case .highlightSelectedElement:
-//                return "highlight-selected-element"
-//            case .removeAllHighlights:
-//                return "remove-all-highlights"
+            case .highlightSelectedElement:
+                return "highlight-selected-element"
+            case .removeAllHighlights:
+                return "remove-all-highlights"
 //            case .finder:
 //                return "finder"
             }

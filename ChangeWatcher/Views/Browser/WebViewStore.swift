@@ -66,7 +66,9 @@ class WebViewStore: NSObject, ObservableObject {
         
         configuration.add(script: .longPressEvent, scriptMessageHandler: self)
         configuration.add(script: .disableTextSelection, scriptMessageHandler: self)
-
+        configuration.add(script: .highlightSelectedElement, scriptMessageHandler: self)
+        configuration.add(script: .removeAllHighlights, scriptMessageHandler: self)
+ 
         webView = WKWebView(frame: .zero, configuration: configuration)
         webView.allowsLinkPreview = false
         webView.navigationDelegate = self

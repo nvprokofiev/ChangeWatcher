@@ -245,14 +245,14 @@
 		67FC857A25B92BF30037F61C /* JS */ = {
 			isa = PBXGroup;
 			children = (
-				67FC857B25B92BF30037F61C /* css-selector-generator.min.js */,
-				67FC857E25B92BF30037F61C /* remove-all-highlights.js */,
-				67FC858025B92BF30037F61C /* highlight-selected-element.js */,
+				67FC859B25B932190037F61C /* long-press-event.js */,
 				67FC857F25B92BF30037F61C /* disable-text-selection.js */,
+				67FC858025B92BF30037F61C /* highlight-selected-element.js */,
+				67FC857E25B92BF30037F61C /* remove-all-highlights.js */,
+				67FC857B25B92BF30037F61C /* css-selector-generator.min.js */,
 				67FC857C25B92BF30037F61C /* JSStringProvider.swift */,
 				67FC858125B92BF30037F61C /* css-selector-generator.js */,
 				67FC858225B92BF30037F61C /* finder.js */,
-				67FC859B25B932190037F61C /* long-press-event.js */,
 				67FC858625B92BF30037F61C /* element-xpath.min.js */,
 			);
 			path = JS;
