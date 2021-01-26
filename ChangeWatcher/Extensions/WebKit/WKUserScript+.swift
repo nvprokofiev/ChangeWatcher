@@ -75,7 +75,7 @@ extension WKUserScript {
         
         private var injectionTime: WKUserScriptInjectionTime {
             switch self {
-            case .cssSelectorGenerator, .cssSelectorGeneratorV2:
+            case .cssSelectorGenerator, .cssSelectorGeneratorV2, .optimalSelect:
                 return .atDocumentStart
             default:
                 return .atDocumentEnd
