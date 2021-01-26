@@ -64,11 +64,19 @@ class WebViewStore: NSObject, ObservableObject {
     private func setupWebView() {
         let configuration = WKWebViewConfiguration()
         
+//        WKUserScript.CustomScripts.allCases.forEach {
+//            configuration.add(script: $0, scriptMessageHandler: self)
+//        }
+        
         configuration.add(script: .longPressEvent, scriptMessageHandler: self)
         configuration.add(script: .disableTextSelection, scriptMessageHandler: self)
         configuration.add(script: .highlightSelectedElement, scriptMessageHandler: self)
         configuration.add(script: .removeAllHighlights, scriptMessageHandler: self)
- 
+        configuration.add(script: .cssSelectorGenerator, scriptMessageHandler: self)
+        configuration.add(script: .cssSelectorGeneratorV2, scriptMessageHandler: self)
+        configuration.add(script: .finder, scriptMessageHandler: self)
+        configuration.add(script: .optimalSelect, scriptMessageHandler: self)
+
         webView = WKWebView(frame: .zero, configuration: configuration)
         webView.allowsLinkPreview = false
         webView.navigationDelegate = self

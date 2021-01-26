@@ -170,7 +170,6 @@
 
         // get delay from html attribute if it exists, otherwise default to 1500
         var longPressDelayInMs = parseInt(getNearestAttribute(el, 'data-long-press-delay', '800'), 10); // default 1500
-
         // start the timer
         timer = requestTimeout(fireLongPressEvent.bind(el, e), longPressDelayInMs);
     }
@@ -263,30 +262,53 @@ document.addEventListener("long-press", function (e) {
 
     e.preventDefault();
     var element = e.target;
-    var text = e.target.textContent;
-    if (text.trim().length == 0) {
-        return
-    }
-//
-//    const wrapper = document.createElement('span');
-//    wrapper.classList.add('watch-element');
-//    wrapper.innerText = element.innerText
-//
-//    element.parentNode.insertBefore(wrapper, element);
 
-//    wrap(element, document.createElement('span'));
+    let selectorV1 = new CssSelectorGenerator().getSelector(element);
+    window.webkit.messageHandlers['longPressEvent'].postMessage(selectorV1);
+
+    let selectorV2 = CssSelectorGeneratorV2.getSelector(element);
+    window.webkit.messageHandlers['longPressEvent'].postMessage(selectorV2);
+//
+//    let finder = finder(element);
+//    window.webkit.messageHandlers['longPressEvent'].postMessage(finder);
+//
+//    let select = select(element);
+//    window.webkit.messageHandlers['longPressEvent'].postMessage(select);
+
     element.classList.add('watch-element')
-    
-    var value = element.innerText.replace(/(\r\n|\n|\r)/gm, "");;
-//    let my_selector_generator = new CssSelectorGenerator();
-//    let selector = my_selector_generator.getSelector(element);
-//    let path = window.location.href;
-//    let message = {"selector": selector, "value": value, "urlString": path};
-    
-    // example: wrapping an anchor with class "wrap_me" into a new div element
-
-
-            
-    window.webkit.messageHandlers['longPressEvent'].postMessage(text);
 })
+
+        
+        
+
+//document.addEventListener("long-press", function (e) {
+//
+//    e.preventDefault();
+//    var element = e.target;
+//
+//    var text = e.target.textContent;
+//    if (text.trim().length == 0) {
+//        return
+//    }
+//
+//    var value = element.innerText.replace(/(\r\n|\n|\r)/gm, "");;
+//
+////    let selectorV1 = new CssSelectorGenerator().getSelector(element);
+////    let selectorV2 = CssSelectorGeneratorV2..getSelector(element);
+////    let finder = finder(element);
+////    let select = select(element);
+////
+//    element.classList.add('watch-element')
+////
+////
+//////    let my_selector_generator = new CssSelectorGenerator();
+//////    let selector = my_selector_generator.getSelector(element);
+//////    let path = window.location.href;
+//////    let message = {"selector": selector, "value": value, "urlString": path};
+//////
+////    window.webkit.messageHandlers['longPressEvent'].postMessage(selectorV1);
+////    window.webkit.messageHandlers['longPressEvent'].postMessage(selectorV2);
+////    window.webkit.messageHandlers['longPressEvent'].postMessage("finder");
+////    window.webkit.messageHandlers['longPressEvent'].postMessage(select);
+//})
 
