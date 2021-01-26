@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		674FD8B425C07F0100A90939 /* css-selector-generator-v2.js in Resources */ = {isa = PBXBuildFile; fileRef = 674FD8B325C07F0100A90939 /* css-selector-generator-v2.js */; };
-		674FD8B825C082D500A90939 /* css-gen-module.js in Resources */ = {isa = PBXBuildFile; fileRef = 674FD8B725C082D500A90939 /* css-gen-module.js */; };
 		67FC84EC25B53E130037F61C /* ChangeWatcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC84EB25B53E130037F61C /* ChangeWatcherApp.swift */; };
 		67FC84EE25B53E130037F61C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC84ED25B53E130037F61C /* ContentView.swift */; };
 		67FC84F025B53E150037F61C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67FC84EF25B53E150037F61C /* Assets.xcassets */; };
@@ -46,7 +45,6 @@
 
 /* Begin PBXFileReference section */
 		674FD8B325C07F0100A90939 /* css-selector-generator-v2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "css-selector-generator-v2.js"; sourceTree = "<group>"; };
-		674FD8B725C082D500A90939 /* css-gen-module.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "css-gen-module.js"; sourceTree = "<group>"; };
 		67FC84E825B53E130037F61C /* ChangeWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChangeWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67FC84EB25B53E130037F61C /* ChangeWatcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeWatcherApp.swift; sourceTree = "<group>"; };
 		67FC84ED25B53E130037F61C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -251,7 +249,6 @@
 			children = (
 				67FC85B425C05D190037F61C /* Style */,
 				67FC85B325C05CEC0037F61C /* CssSelectorGenerator */,
-				674FD8B725C082D500A90939 /* css-gen-module.js */,
 				67FC859B25B932190037F61C /* long-press-event.js */,
 				67FC857C25B92BF30037F61C /* JSStringProvider.swift */,
 				67FC858625B92BF30037F61C /* element-xpath.min.js */,
@@ -355,7 +352,6 @@
 				67FC858A25B92BF30037F61C /* disable-text-selection.js in Resources */,
 				67FC859C25B932190037F61C /* long-press-event.js in Resources */,
 				67FC859025B92BF30037F61C /* element-xpath.min.js in Resources */,
-				674FD8B825C082D500A90939 /* css-gen-module.js in Resources */,
 				67FC84F325B53E150037F61C /* Preview Assets.xcassets in Resources */,
 				67FC84F025B53E150037F61C /* Assets.xcassets in Resources */,
 				674FD8B425C07F0100A90939 /* css-selector-generator-v2.js in Resources */,

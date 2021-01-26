@@ -264,17 +264,17 @@ document.addEventListener("long-press", function (e) {
     var element = e.target;
 
     let selectorV1 = new CssSelectorGenerator().getSelector(element);
-    window.webkit.messageHandlers['longPressEvent'].postMessage(selectorV1);
+    window.webkit.messageHandlers['longPressEvent'].postMessage("Selector V1        " + selectorV1);
 
     let selectorV2 = CssSelectorGeneratorV2.getSelector(element);
-    window.webkit.messageHandlers['longPressEvent'].postMessage(selectorV2);
+    window.webkit.messageHandlers['longPressEvent'].postMessage("Selector V2        " + selectorV2);
     
     let select = OptimalSelect.getSelector(element);
-    window.webkit.messageHandlers['longPressEvent'].postMessage(select);
-//
-//    let finder = finder(element);
-//    window.webkit.messageHandlers['longPressEvent'].postMessage(finder);
-//
+    window.webkit.messageHandlers['longPressEvent'].postMessage("Optimal Select     " + select);
+
+    let finderSel = finder(element);
+    window.webkit.messageHandlers['longPressEvent'].postMessage("Finder             " + finderSel);
+
     element.classList.add('watch-element')
 })
 

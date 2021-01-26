@@ -6,7 +6,7 @@ var Limit;
 })(Limit || (Limit = {}));
 let config;
 let rootDocument;
-export function finder(input, options) {
+function finder(input, options) {
     if (input.nodeType !== Node.ELEMENT_NODE) {
         throw new Error(`Can't generate CSS selector for non-element node type.`);
     }
