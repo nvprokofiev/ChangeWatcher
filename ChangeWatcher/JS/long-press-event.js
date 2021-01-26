@@ -262,53 +262,29 @@ document.addEventListener("long-press", function (e) {
 
     e.preventDefault();
     var element = e.target;
+    
+    var text = e.target.textContent;
+    if (text.trim().length == 0) { return }
 
     let selectorV1 = new CssSelectorGenerator().getSelector(element);
-    window.webkit.messageHandlers['longPressEvent'].postMessage("Selector V1        " + selectorV1);
-
     let selectorV2 = CssSelectorGeneratorV2.getSelector(element);
-    window.webkit.messageHandlers['longPressEvent'].postMessage("Selector V2        " + selectorV2);
+    let optimalSelector = OptimalSelect.getSelector(element);
+    let finderSelector = finder(element);
     
-    let select = OptimalSelect.getSelector(element);
-    window.webkit.messageHandlers['longPressEvent'].postMessage("Optimal Select     " + select);
+    let value = element.innerText.replace(/(\r\n|\n|\r)/gm, "");
+    let path = window.location.href;
+    let faviconPath = path + "/favicon.ico";
+    
+    var selectors = new Set([selectorV1, selectorV2, optimalSelector, finderSelector]);
+    selectors = Array.from(selectors);
 
-    let finderSel = finder(element);
-    window.webkit.messageHandlers['longPressEvent'].postMessage("Finder             " + finderSel);
+    let message = {"selector": selector, "value": value, "urlString": path};
 
+    
+    
+    
+    
     element.classList.add('watch-element')
+    
+    window.webkit.messageHandlers['longPressEvent'].postMessage(selectors);
 })
-
-        
-        
-
-//document.addEventListener("long-press", function (e) {
-//
-//    e.preventDefault();
-//    var element = e.target;
-//
-//    var text = e.target.textContent;
-//    if (text.trim().length == 0) {
-//        return
-//    }
-//
-//    var value = element.innerText.replace(/(\r\n|\n|\r)/gm, "");;
-//
-////    let selectorV1 = new CssSelectorGenerator().getSelector(element);
-////    let selectorV2 = CssSelectorGeneratorV2..getSelector(element);
-////    let finder = finder(element);
-////    let select = select(element);
-////
-//    element.classList.add('watch-element')
-////
-////
-//////    let my_selector_generator = new CssSelectorGenerator();
-//////    let selector = my_selector_generator.getSelector(element);
-//////    let path = window.location.href;
-//////    let message = {"selector": selector, "value": value, "urlString": path};
-//////
-////    window.webkit.messageHandlers['longPressEvent'].postMessage(selectorV1);
-////    window.webkit.messageHandlers['longPressEvent'].postMessage(selectorV2);
-////    window.webkit.messageHandlers['longPressEvent'].postMessage("finder");
-////    window.webkit.messageHandlers['longPressEvent'].postMessage(select);
-//})
-
