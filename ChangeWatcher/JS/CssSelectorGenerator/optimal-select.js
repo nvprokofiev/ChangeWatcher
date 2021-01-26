@@ -1386,13 +1386,13 @@
 
  var _optimalSelect = require("optimal-select");
 
- function cssSelector(el) {
+ function getSelector(el) {
    var selector = (0, _optimalSelect.select)(el);
    return selector;
  }
 
  module.exports = {
-   select: cssSelector
+ getSelector: getSelector
  };
 
  },{"optimal-select":3}]},{},[8])(8)

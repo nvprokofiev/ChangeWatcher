@@ -268,13 +268,13 @@ document.addEventListener("long-press", function (e) {
 
     let selectorV2 = CssSelectorGeneratorV2.getSelector(element);
     window.webkit.messageHandlers['longPressEvent'].postMessage(selectorV2);
+    
+    let select = OptimalSelect.getSelector(element);
+    window.webkit.messageHandlers['longPressEvent'].postMessage(select);
 //
 //    let finder = finder(element);
 //    window.webkit.messageHandlers['longPressEvent'].postMessage(finder);
 //
-//    let select = select(element);
-//    window.webkit.messageHandlers['longPressEvent'].postMessage(select);
-
     element.classList.add('watch-element')
 })
 
