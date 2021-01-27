@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		674FD8B425C07F0100A90939 /* css-selector-generator-v2.js in Resources */ = {isa = PBXBuildFile; fileRef = 674FD8B325C07F0100A90939 /* css-selector-generator-v2.js */; };
 		67FC84EC25B53E130037F61C /* ChangeWatcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC84EB25B53E130037F61C /* ChangeWatcherApp.swift */; };
 		67FC84EE25B53E130037F61C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC84ED25B53E130037F61C /* ContentView.swift */; };
 		67FC84F025B53E150037F61C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67FC84EF25B53E150037F61C /* Assets.xcassets */; };
@@ -29,9 +30,20 @@
 		67FC857125B7E8070037F61C /* GoogleSearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC857025B7E8070037F61C /* GoogleSearchEngine.swift */; };
 		67FC857425B7E8360037F61C /* YandexSearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC857325B7E8360037F61C /* YandexSearchEngine.swift */; };
 		67FC857825B7EFC40037F61C /* SearchRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC857725B7EFC40037F61C /* SearchRequestError.swift */; };
+		67FC858925B92BF30037F61C /* remove-all-highlights.js in Resources */ = {isa = PBXBuildFile; fileRef = 67FC857E25B92BF30037F61C /* remove-all-highlights.js */; };
+		67FC858A25B92BF30037F61C /* disable-text-selection.js in Resources */ = {isa = PBXBuildFile; fileRef = 67FC857F25B92BF30037F61C /* disable-text-selection.js */; };
+		67FC858B25B92BF30037F61C /* highlight-selected-element.js in Resources */ = {isa = PBXBuildFile; fileRef = 67FC858025B92BF30037F61C /* highlight-selected-element.js */; };
+		67FC858C25B92BF30037F61C /* css-selector-generator.js in Resources */ = {isa = PBXBuildFile; fileRef = 67FC858125B92BF30037F61C /* css-selector-generator.js */; };
+		67FC858D25B92BF30037F61C /* finder.js in Resources */ = {isa = PBXBuildFile; fileRef = 67FC858225B92BF30037F61C /* finder.js */; };
+		67FC859025B92BF30037F61C /* element-xpath.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 67FC858625B92BF30037F61C /* element-xpath.min.js */; };
+		67FC859625B92CBD0037F61C /* WKUserScript+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC859425B92CBD0037F61C /* WKUserScript+.swift */; };
+		67FC859725B92CBD0037F61C /* WKWebViewConfiguration+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC859525B92CBD0037F61C /* WKWebViewConfiguration+.swift */; };
+		67FC859C25B932190037F61C /* long-press-event.js in Resources */ = {isa = PBXBuildFile; fileRef = 67FC859B25B932190037F61C /* long-press-event.js */; };
+		67FC85B025BF5AA70037F61C /* optimal-select.js in Resources */ = {isa = PBXBuildFile; fileRef = 67FC85AF25BF5AA70037F61C /* optimal-select.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		674FD8B325C07F0100A90939 /* css-selector-generator-v2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "css-selector-generator-v2.js"; sourceTree = "<group>"; };
 		67FC84E825B53E130037F61C /* ChangeWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChangeWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67FC84EB25B53E130037F61C /* ChangeWatcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeWatcherApp.swift; sourceTree = "<group>"; };
 		67FC84ED25B53E130037F61C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +67,16 @@
 		67FC857025B7E8070037F61C /* GoogleSearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSearchEngine.swift; sourceTree = "<group>"; };
 		67FC857325B7E8360037F61C /* YandexSearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexSearchEngine.swift; sourceTree = "<group>"; };
 		67FC857725B7EFC40037F61C /* SearchRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequestError.swift; sourceTree = "<group>"; };
+		67FC857E25B92BF30037F61C /* remove-all-highlights.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "remove-all-highlights.js"; sourceTree = "<group>"; };
+		67FC857F25B92BF30037F61C /* disable-text-selection.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "disable-text-selection.js"; sourceTree = "<group>"; };
+		67FC858025B92BF30037F61C /* highlight-selected-element.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "highlight-selected-element.js"; sourceTree = "<group>"; };
+		67FC858125B92BF30037F61C /* css-selector-generator.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "css-selector-generator.js"; sourceTree = "<group>"; };
+		67FC858225B92BF30037F61C /* finder.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = finder.js; sourceTree = "<group>"; };
+		67FC858625B92BF30037F61C /* element-xpath.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "element-xpath.min.js"; sourceTree = "<group>"; };
+		67FC859425B92CBD0037F61C /* WKUserScript+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WKUserScript+.swift"; sourceTree = "<group>"; };
+		67FC859525B92CBD0037F61C /* WKWebViewConfiguration+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WKWebViewConfiguration+.swift"; sourceTree = "<group>"; };
+		67FC859B25B932190037F61C /* long-press-event.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "long-press-event.js"; sourceTree = "<group>"; };
+		67FC85AF25BF5AA70037F61C /* optimal-select.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "optimal-select.js"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +110,7 @@
 		67FC84EA25B53E130037F61C /* ChangeWatcher */ = {
 			isa = PBXGroup;
 			children = (
+				67FC857A25B92BF30037F61C /* JS */,
 				67FC855F25B6A1460037F61C /* Networking */,
 				67FC853725B5F4530037F61C /* Extensions */,
 				67FC852925B5DEB70037F61C /* Common */,
@@ -185,6 +208,7 @@
 		67FC853725B5F4530037F61C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				67FC859325B92C930037F61C /* WebKit */,
 				67FC854325B5F7850037F61C /* String+.swift */,
 			);
 			path = Extensions;
@@ -216,6 +240,47 @@
 				67FC857325B7E8360037F61C /* YandexSearchEngine.swift */,
 			);
 			path = SearchEngine;
+			sourceTree = "<group>";
+		};
+		67FC857A25B92BF30037F61C /* JS */ = {
+			isa = PBXGroup;
+			children = (
+				67FC85B425C05D190037F61C /* Style */,
+				67FC85B325C05CEC0037F61C /* CssSelectorGenerator */,
+				67FC859B25B932190037F61C /* long-press-event.js */,
+				67FC858625B92BF30037F61C /* element-xpath.min.js */,
+			);
+			path = JS;
+			sourceTree = "<group>";
+		};
+		67FC859325B92C930037F61C /* WebKit */ = {
+			isa = PBXGroup;
+			children = (
+				67FC859425B92CBD0037F61C /* WKUserScript+.swift */,
+				67FC859525B92CBD0037F61C /* WKWebViewConfiguration+.swift */,
+			);
+			path = WebKit;
+			sourceTree = "<group>";
+		};
+		67FC85B325C05CEC0037F61C /* CssSelectorGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				67FC858225B92BF30037F61C /* finder.js */,
+				67FC858125B92BF30037F61C /* css-selector-generator.js */,
+				674FD8B325C07F0100A90939 /* css-selector-generator-v2.js */,
+				67FC85AF25BF5AA70037F61C /* optimal-select.js */,
+			);
+			path = CssSelectorGenerator;
+			sourceTree = "<group>";
+		};
+		67FC85B425C05D190037F61C /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				67FC857F25B92BF30037F61C /* disable-text-selection.js */,
+				67FC858025B92BF30037F61C /* highlight-selected-element.js */,
+				67FC857E25B92BF30037F61C /* remove-all-highlights.js */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,8 +346,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67FC858A25B92BF30037F61C /* disable-text-selection.js in Resources */,
+				67FC859C25B932190037F61C /* long-press-event.js in Resources */,
+				67FC859025B92BF30037F61C /* element-xpath.min.js in Resources */,
 				67FC84F325B53E150037F61C /* Preview Assets.xcassets in Resources */,
 				67FC84F025B53E150037F61C /* Assets.xcassets in Resources */,
+				674FD8B425C07F0100A90939 /* css-selector-generator-v2.js in Resources */,
+				67FC858D25B92BF30037F61C /* finder.js in Resources */,
+				67FC858C25B92BF30037F61C /* css-selector-generator.js in Resources */,
+				67FC85B025BF5AA70037F61C /* optimal-select.js in Resources */,
+				67FC858925B92BF30037F61C /* remove-all-highlights.js in Resources */,
+				67FC858B25B92BF30037F61C /* highlight-selected-element.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,12 +368,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				67FC857425B7E8360037F61C /* YandexSearchEngine.swift in Sources */,
+				67FC859725B92CBD0037F61C /* WKWebViewConfiguration+.swift in Sources */,
 				67FC854725B5FEF00037F61C /* SearchRequestProvider.swift in Sources */,
 				67FC853225B5E5170037F61C /* ToolbarButtonView.swift in Sources */,
 				67FC852625B5DDD60037F61C /* BrowserSearchView.swift in Sources */,
 				67FC854125B5F5A10037F61C /* SearchEngine.swift in Sources */,
 				67FC856125B6A16F0037F61C /* NetworkService.swift in Sources */,
 				67FC857125B7E8070037F61C /* GoogleSearchEngine.swift in Sources */,
+				67FC859625B92CBD0037F61C /* WKUserScript+.swift in Sources */,
 				67FC852F25B5DF200037F61C /* Constants.swift in Sources */,
 				67FC857825B7EFC40037F61C /* SearchRequestError.swift in Sources */,
 				67FC84EE25B53E130037F61C /* ContentView.swift in Sources */,
