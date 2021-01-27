@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		674FD8B425C07F0100A90939 /* css-selector-generator-v2.js in Resources */ = {isa = PBXBuildFile; fileRef = 674FD8B325C07F0100A90939 /* css-selector-generator-v2.js */; };
+		679A618225C12BF400E10113 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 679A618125C12BF400E10113 /* SwiftSoup */; };
+		679A618625C12C3B00E10113 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = 679A618525C12C3B00E10113 /* Kanna */; };
 		67FC84EC25B53E130037F61C /* ChangeWatcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC84EB25B53E130037F61C /* ChangeWatcherApp.swift */; };
 		67FC84EE25B53E130037F61C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC84ED25B53E130037F61C /* ContentView.swift */; };
 		67FC84F025B53E150037F61C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67FC84EF25B53E150037F61C /* Assets.xcassets */; };
@@ -84,7 +86,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				679A618625C12C3B00E10113 /* Kanna in Frameworks */,
 				67FC853B25B5F5460037F61C /* PublicSuffix in Frameworks */,
+				679A618225C12BF400E10113 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +305,8 @@
 			name = ChangeWatcher;
 			packageProductDependencies = (
 				67FC853A25B5F5460037F61C /* PublicSuffix */,
+				679A618125C12BF400E10113 /* SwiftSoup */,
+				679A618525C12C3B00E10113 /* Kanna */,
 			);
 			productName = ChangeWatcher;
 			productReference = 67FC84E825B53E130037F61C /* ChangeWatcher.app */;
@@ -331,6 +337,8 @@
 			mainGroup = 67FC84DF25B53E130037F61C;
 			packageReferences = (
 				67FC853925B5F5460037F61C /* XCRemoteSwiftPackageReference "PublicSuffix-Swift" */,
+				679A618025C12BF300E10113 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				679A618425C12C3B00E10113 /* XCRemoteSwiftPackageReference "Kanna" */,
 			);
 			productRefGroup = 67FC84E925B53E130037F61C /* Products */;
 			projectDirPath = "";
@@ -578,6 +586,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		679A618025C12BF300E10113 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.2;
+			};
+		};
+		679A618425C12C3B00E10113 /* XCRemoteSwiftPackageReference "Kanna" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tid-kijyun/Kanna";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.4;
+			};
+		};
 		67FC853925B5F5460037F61C /* XCRemoteSwiftPackageReference "PublicSuffix-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jameshurst/PublicSuffix-Swift.git";
@@ -589,6 +613,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		679A618125C12BF400E10113 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 679A618025C12BF300E10113 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+		679A618525C12C3B00E10113 /* Kanna */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 679A618425C12C3B00E10113 /* XCRemoteSwiftPackageReference "Kanna" */;
+			productName = Kanna;
+		};
 		67FC853A25B5F5460037F61C /* PublicSuffix */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 67FC853925B5F5460037F61C /* XCRemoteSwiftPackageReference "PublicSuffix-Swift" */;
