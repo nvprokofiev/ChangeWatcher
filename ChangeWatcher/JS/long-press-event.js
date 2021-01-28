@@ -278,7 +278,7 @@ document.addEventListener("long-press", function (e) {
     var selectors = new Set([selectorV1, selectorV2, optimalSelector, finderSelector]);
     selectors = Array.from(selectors);
 
-    let message = {"selector": selector, "value": value, "urlString": path};
+    let message = {"selectors": selectors, "value": value, "urlString": path};
 
     
     
@@ -286,5 +286,5 @@ document.addEventListener("long-press", function (e) {
     
     element.classList.add('watch-element')
     
-    window.webkit.messageHandlers['longPressEvent'].postMessage(selectors);
+    window.webkit.messageHandlers['longPressEvent'].postMessage(message);
 })

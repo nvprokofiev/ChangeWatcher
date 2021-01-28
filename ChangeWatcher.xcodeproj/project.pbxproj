@@ -10,6 +10,12 @@
 		674FD8B425C07F0100A90939 /* css-selector-generator-v2.js in Resources */ = {isa = PBXBuildFile; fileRef = 674FD8B325C07F0100A90939 /* css-selector-generator-v2.js */; };
 		679A618225C12BF400E10113 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 679A618125C12BF400E10113 /* SwiftSoup */; };
 		679A618625C12C3B00E10113 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = 679A618525C12C3B00E10113 /* Kanna */; };
+		679A618925C12CD600E10113 /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679A618825C12CD600E10113 /* HTMLParser.swift */; };
+		679A618D25C12D5B00E10113 /* KannaHTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679A618C25C12D5B00E10113 /* KannaHTMLParser.swift */; };
+		679A619025C12D7000E10113 /* SwiftSoupHTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679A618F25C12D7000E10113 /* SwiftSoupHTMLParser.swift */; };
+		67F52A5D25C247E700E37A61 /* WatchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A5C25C247E700E37A61 /* WatchItem.swift */; };
+		67F52A6625C24A8E00E37A61 /* WatchItemParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A6525C24A8E00E37A61 /* WatchItemParser.swift */; };
+		67F52A6C25C2597E00E37A61 /* BrowserInitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A6B25C2597E00E37A61 /* BrowserInitialView.swift */; };
 		67FC84EC25B53E130037F61C /* ChangeWatcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC84EB25B53E130037F61C /* ChangeWatcherApp.swift */; };
 		67FC84EE25B53E130037F61C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC84ED25B53E130037F61C /* ContentView.swift */; };
 		67FC84F025B53E150037F61C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67FC84EF25B53E150037F61C /* Assets.xcassets */; };
@@ -46,6 +52,12 @@
 
 /* Begin PBXFileReference section */
 		674FD8B325C07F0100A90939 /* css-selector-generator-v2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "css-selector-generator-v2.js"; sourceTree = "<group>"; };
+		679A618825C12CD600E10113 /* HTMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLParser.swift; sourceTree = "<group>"; };
+		679A618C25C12D5B00E10113 /* KannaHTMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KannaHTMLParser.swift; sourceTree = "<group>"; };
+		679A618F25C12D7000E10113 /* SwiftSoupHTMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSoupHTMLParser.swift; sourceTree = "<group>"; };
+		67F52A5C25C247E700E37A61 /* WatchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchItem.swift; path = ../../../../Downloads/WatchItem.swift; sourceTree = "<group>"; };
+		67F52A6525C24A8E00E37A61 /* WatchItemParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchItemParser.swift; sourceTree = "<group>"; };
+		67F52A6B25C2597E00E37A61 /* BrowserInitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserInitialView.swift; sourceTree = "<group>"; };
 		67FC84E825B53E130037F61C /* ChangeWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChangeWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67FC84EB25B53E130037F61C /* ChangeWatcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeWatcherApp.swift; sourceTree = "<group>"; };
 		67FC84ED25B53E130037F61C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,6 +107,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		679A618B25C12D4400E10113 /* HTMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				679A618825C12CD600E10113 /* HTMLParser.swift */,
+				679A618C25C12D5B00E10113 /* KannaHTMLParser.swift */,
+				679A618F25C12D7000E10113 /* SwiftSoupHTMLParser.swift */,
+			);
+			path = HTMLParser;
+			sourceTree = "<group>";
+		};
+		67F52A6325C24A6F00E37A61 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				67FC856025B6A16F0037F61C /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
 		67FC84DF25B53E130037F61C = {
 			isa = PBXGroup;
 			children = (
@@ -115,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				67FC857A25B92BF30037F61C /* JS */,
-				67FC855F25B6A1460037F61C /* Networking */,
+				67FC855F25B6A1460037F61C /* Services */,
 				67FC853725B5F4530037F61C /* Extensions */,
 				67FC852925B5DEB70037F61C /* Common */,
 				67FC852025B5DCFD0037F61C /* Protocols */,
@@ -159,6 +189,10 @@
 		67FC850025B540940037F61C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				679A618B25C12D4400E10113 /* HTMLParser */,
+				67FC856F25B7E7EF0037F61C /* SearchEngine */,
+				67F52A5C25C247E700E37A61 /* WatchItem.swift */,
+				67FC852125B5DD1F0037F61C /* Watchable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +210,7 @@
 		67FC851C25B5444C0037F61C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				67F52A6525C24A8E00E37A61 /* WatchItemParser.swift */,
 				67FC853825B5F4A60037F61C /* RequestProvider */,
 				67FC851D25B5445E0037F61C /* WebCacheCleaner.swift */,
 			);
@@ -185,7 +220,6 @@
 		67FC852025B5DCFD0037F61C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				67FC852125B5DD1F0037F61C /* Watchable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -205,6 +239,7 @@
 				67FC852425B5DDD60037F61C /* BrowserSearchView.swift */,
 				67FC852525B5DDD60037F61C /* BrowserToolbarView.swift */,
 				67FC853125B5E5170037F61C /* ToolbarButtonView.swift */,
+				67F52A6B25C2597E00E37A61 /* BrowserInitialView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -221,19 +256,18 @@
 		67FC853825B5F4A60037F61C /* RequestProvider */ = {
 			isa = PBXGroup;
 			children = (
-				67FC856F25B7E7EF0037F61C /* SearchEngine */,
 				67FC854625B5FEF00037F61C /* SearchRequestProvider.swift */,
 				67FC857725B7EFC40037F61C /* SearchRequestError.swift */,
 			);
 			path = RequestProvider;
 			sourceTree = "<group>";
 		};
-		67FC855F25B6A1460037F61C /* Networking */ = {
+		67FC855F25B6A1460037F61C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				67FC856025B6A16F0037F61C /* NetworkService.swift */,
+				67F52A6325C24A6F00E37A61 /* NetworkService */,
 			);
-			path = Networking;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		67FC856F25B7E7EF0037F61C /* SearchEngine */ = {
@@ -375,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				679A618D25C12D5B00E10113 /* KannaHTMLParser.swift in Sources */,
 				67FC857425B7E8360037F61C /* YandexSearchEngine.swift in Sources */,
 				67FC859725B92CBD0037F61C /* WKWebViewConfiguration+.swift in Sources */,
 				67FC854725B5FEF00037F61C /* SearchRequestProvider.swift in Sources */,
@@ -383,16 +418,21 @@
 				67FC854125B5F5A10037F61C /* SearchEngine.swift in Sources */,
 				67FC856125B6A16F0037F61C /* NetworkService.swift in Sources */,
 				67FC857125B7E8070037F61C /* GoogleSearchEngine.swift in Sources */,
+				67F52A6625C24A8E00E37A61 /* WatchItemParser.swift in Sources */,
 				67FC859625B92CBD0037F61C /* WKUserScript+.swift in Sources */,
 				67FC852F25B5DF200037F61C /* Constants.swift in Sources */,
+				67F52A5D25C247E700E37A61 /* WatchItem.swift in Sources */,
 				67FC857825B7EFC40037F61C /* SearchRequestError.swift in Sources */,
 				67FC84EE25B53E130037F61C /* ContentView.swift in Sources */,
+				679A618925C12CD600E10113 /* HTMLParser.swift in Sources */,
 				67FC851925B5422B0037F61C /* BrowserWebView.swift in Sources */,
 				67FC854425B5F7850037F61C /* String+.swift in Sources */,
 				67FC84EC25B53E130037F61C /* ChangeWatcherApp.swift in Sources */,
+				679A619025C12D7000E10113 /* SwiftSoupHTMLParser.swift in Sources */,
 				67FC851A25B5422B0037F61C /* WebViewStore.swift in Sources */,
 				67FC851E25B5445E0037F61C /* WebCacheCleaner.swift in Sources */,
 				67FC852225B5DD1F0037F61C /* Watchable.swift in Sources */,
+				67F52A6C25C2597E00E37A61 /* BrowserInitialView.swift in Sources */,
 				67FC852725B5DDD60037F61C /* BrowserToolbarView.swift in Sources */,
 				67FC850925B541110037F61C /* UIViewContainerView.swift in Sources */,
 				67FC851825B5422B0037F61C /* BrowserView.swift in Sources */,

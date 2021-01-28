@@ -20,12 +20,9 @@ class WebViewStore: NSObject, ObservableObject {
         didSet { loadQuery(query) }
     }
     
-    @Published var longTapDetected: Bool = false
-    
-    var watchableItem: Watchable?
+    @Published var browserState: BrowserState = .initial
     
     private var searchEngine = GoogleSearchEngine()
-    
     private var observers: [NSKeyValueObservation] = []
     
     override init() {
@@ -64,18 +61,9 @@ class WebViewStore: NSObject, ObservableObject {
     private func setupWebView() {
         let configuration = WKWebViewConfiguration()
         
-//        WKUserScript.CustomScripts.allCases.forEach {
-//            configuration.add(script: $0, scriptMessageHandler: self)
-//        }
-        
-        configuration.add(script: .longPressEvent, scriptMessageHandler: self)
-        configuration.add(script: .disableTextSelection, scriptMessageHandler: self)
-        configuration.add(script: .highlightSelectedElement, scriptMessageHandler: self)
-        configuration.add(script: .removeAllHighlights, scriptMessageHandler: self)
-        configuration.add(script: .cssSelectorGenerator, scriptMessageHandler: self)
-        configuration.add(script: .cssSelectorGeneratorV2, scriptMessageHandler: self)
-        configuration.add(script: .finder, scriptMessageHandler: self)
-        configuration.add(script: .optimalSelect, scriptMessageHandler: self)
+        WKUserScript.CustomScripts.allCases.forEach {
+            configuration.add(script: $0, scriptMessageHandler: self)
+        }
 
         webView = WKWebView(frame: .zero, configuration: configuration)
         webView.allowsLinkPreview = false
@@ -89,11 +77,14 @@ class WebViewStore: NSObject, ObservableObject {
         
         provider.getURLRequest { [weak self] result in
             guard let self = self else { return }
+            
             switch result {
             case .failure(let error):
-                print(error)
+                self.browserState = .pageNotRechable
             case .success(let request):
+                self.browserState = .running
                 self.webView.load(request)
+                
             }
         }
     }
@@ -122,22 +113,21 @@ extension WebViewStore: WKScriptMessageHandler  {
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
-//        longTapDetected.toggle()
         guard let script = WKUserScript.CustomScripts(rawValue: message.name) else { return }
         
         switch script {
         case .longPressEvent:
-            print("-----------", message.body)
+            
+            do {
+                let watchItem = try WatchItem(string: message.body)
+                browserState = .longTapDetected(watchItem: watchItem)
+            } catch {
+                print(error)
+            }
         default:
             return
         }
-        
-//        guard script == .longPressEvent else { return }
-//        guard let watchingItem = WathingItemParser.parse(from: message.body) else { return }
-
-//        self.watchingItem = watchingItem
     }
-    
 }
 
 extension WebViewStore: WKNavigationDelegate {

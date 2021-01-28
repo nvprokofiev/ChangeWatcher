@@ -7,14 +7,20 @@
 
 import SwiftUI
 
+enum BrowserState {
+    case initial
+    case running
+    case pageNotRechable
+    case longTapDetected(watchItem: WatchItem)
+}
+
 struct BrowserView: View {
     
     @State var query = String()
     @StateObject var webViewStore = WebViewStore()
     
-    var isLongTapDetected: Bool {
-        false
-//        webViewStore.longTapDetected
+    var browserState: BrowserState {
+        webViewStore.browserState
     }
     
     private var estimatedProgress: Double {
@@ -22,6 +28,7 @@ struct BrowserView: View {
     }
     
     var body: some View {
+
         ZStack {
             VStack(spacing: 2) {
                 HStack(spacing: 0) {
@@ -35,6 +42,10 @@ struct BrowserView: View {
                 toolbarView
             }
             .ignoresSafeArea(.all, edges: .bottom)
+            
+            
+            
+            
             
 //            if isLongTapDetected {
 //                AddWatcherView(viewModel: AddWatcherViewModel(store: webViewStore))
