@@ -36,6 +36,7 @@ struct BrowserView: View {
                         .padding(.horizontal, 10)
                 }
                 ZStack {
+
                     BrowserWebView(webView: webViewStore.webView )
                     progressView
                 }
@@ -43,14 +44,9 @@ struct BrowserView: View {
             }
             .ignoresSafeArea(.all, edges: .bottom)
             
-            
-            
-            
-            
-//            if isLongTapDetected {
-//                AddWatcherView(viewModel: AddWatcherViewModel(store: webViewStore))
-//            }
-            
+            if case let BrowserState.longTapDetected(watchItem: watchItem) = browserState {
+                AddWatcherView(viewModel: AddWatcherViewModel(watchItem))
+            }
         }
     }
     

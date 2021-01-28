@@ -16,6 +16,9 @@
 		67F52A5D25C247E700E37A61 /* WatchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A5C25C247E700E37A61 /* WatchItem.swift */; };
 		67F52A6625C24A8E00E37A61 /* WatchItemParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A6525C24A8E00E37A61 /* WatchItemParser.swift */; };
 		67F52A6C25C2597E00E37A61 /* BrowserInitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A6B25C2597E00E37A61 /* BrowserInitialView.swift */; };
+		67F52A7125C263EE00E37A61 /* AddWatcherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A7025C263EE00E37A61 /* AddWatcherViewModel.swift */; };
+		67F52A7525C2643E00E37A61 /* AddWatcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A7425C2643E00E37A61 /* AddWatcherView.swift */; };
+		67F52A7925C270BD00E37A61 /* TestWatcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A7825C270BD00E37A61 /* TestWatcherService.swift */; };
 		67FC84EC25B53E130037F61C /* ChangeWatcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC84EB25B53E130037F61C /* ChangeWatcherApp.swift */; };
 		67FC84EE25B53E130037F61C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC84ED25B53E130037F61C /* ContentView.swift */; };
 		67FC84F025B53E150037F61C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67FC84EF25B53E150037F61C /* Assets.xcassets */; };
@@ -58,6 +61,9 @@
 		67F52A5C25C247E700E37A61 /* WatchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchItem.swift; path = ../../../../Downloads/WatchItem.swift; sourceTree = "<group>"; };
 		67F52A6525C24A8E00E37A61 /* WatchItemParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchItemParser.swift; sourceTree = "<group>"; };
 		67F52A6B25C2597E00E37A61 /* BrowserInitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserInitialView.swift; sourceTree = "<group>"; };
+		67F52A7025C263EE00E37A61 /* AddWatcherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatcherViewModel.swift; sourceTree = "<group>"; };
+		67F52A7425C2643E00E37A61 /* AddWatcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatcherView.swift; sourceTree = "<group>"; };
+		67F52A7825C270BD00E37A61 /* TestWatcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWatcherService.swift; sourceTree = "<group>"; };
 		67FC84E825B53E130037F61C /* ChangeWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChangeWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67FC84EB25B53E130037F61C /* ChangeWatcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeWatcherApp.swift; sourceTree = "<group>"; };
 		67FC84ED25B53E130037F61C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,12 +123,36 @@
 			path = HTMLParser;
 			sourceTree = "<group>";
 		};
-		67F52A6325C24A6F00E37A61 /* NetworkService */ = {
+		67F52A6325C24A6F00E37A61 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				67FC856025B6A16F0037F61C /* NetworkService.swift */,
 			);
-			path = NetworkService;
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		67F52A6E25C2638600E37A61 /* AddWatcherView */ = {
+			isa = PBXGroup;
+			children = (
+				67F52A7425C2643E00E37A61 /* AddWatcherView.swift */,
+			);
+			path = AddWatcherView;
+			sourceTree = "<group>";
+		};
+		67F52A6F25C263C600E37A61 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				67F52A7025C263EE00E37A61 /* AddWatcherViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		67F52A7B25C271B800E37A61 /* TestWatcher */ = {
+			isa = PBXGroup;
+			children = (
+				67F52A7825C270BD00E37A61 /* TestWatcherService.swift */,
+			);
+			path = TestWatcher;
 			sourceTree = "<group>";
 		};
 		67FC84DF25B53E130037F61C = {
@@ -152,6 +182,7 @@
 				67FC851C25B5444C0037F61C /* Utilities */,
 				67FC84FB25B53FB10037F61C /* App */,
 				67FC850025B540940037F61C /* Model */,
+				67F52A6F25C263C600E37A61 /* ViewModel */,
 				67FC84FF25B540870037F61C /* Views */,
 				67FC84EB25B53E130037F61C /* ChangeWatcherApp.swift */,
 				67FC84ED25B53E130037F61C /* ContentView.swift */,
@@ -203,6 +234,7 @@
 				67FC851525B5422B0037F61C /* BrowserView.swift */,
 				67FC851725B5422B0037F61C /* WebViewStore.swift */,
 				67FC853525B5E5C70037F61C /* Components */,
+				67F52A6E25C2638600E37A61 /* AddWatcherView */,
 			);
 			path = Browser;
 			sourceTree = "<group>";
@@ -265,7 +297,8 @@
 		67FC855F25B6A1460037F61C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				67F52A6325C24A6F00E37A61 /* NetworkService */,
+				67F52A7B25C271B800E37A61 /* TestWatcher */,
+				67F52A6325C24A6F00E37A61 /* Networking */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -424,10 +457,13 @@
 				67F52A5D25C247E700E37A61 /* WatchItem.swift in Sources */,
 				67FC857825B7EFC40037F61C /* SearchRequestError.swift in Sources */,
 				67FC84EE25B53E130037F61C /* ContentView.swift in Sources */,
+				67F52A7525C2643E00E37A61 /* AddWatcherView.swift in Sources */,
 				679A618925C12CD600E10113 /* HTMLParser.swift in Sources */,
 				67FC851925B5422B0037F61C /* BrowserWebView.swift in Sources */,
 				67FC854425B5F7850037F61C /* String+.swift in Sources */,
 				67FC84EC25B53E130037F61C /* ChangeWatcherApp.swift in Sources */,
+				67F52A7925C270BD00E37A61 /* TestWatcherService.swift in Sources */,
+				67F52A7125C263EE00E37A61 /* AddWatcherViewModel.swift in Sources */,
 				679A619025C12D7000E10113 /* SwiftSoupHTMLParser.swift in Sources */,
 				67FC851A25B5422B0037F61C /* WebViewStore.swift in Sources */,
 				67FC851E25B5445E0037F61C /* WebCacheCleaner.swift in Sources */,
