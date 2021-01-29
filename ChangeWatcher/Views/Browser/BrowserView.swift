@@ -9,7 +9,7 @@ import SwiftUI
 
 enum BrowserState {
     case initial
-    case running
+    case running // when set to running - remove all highlights
     case pageNotRechable
     case longTapDetected(watchItem: WatchItem)
 }
@@ -45,7 +45,7 @@ struct BrowserView: View {
             .ignoresSafeArea(.all, edges: .bottom)
             
             if case let BrowserState.longTapDetected(watchItem: watchItem) = browserState {
-                AddWatcherView(viewModel: AddWatcherViewModel(watchItem))
+                AddWatcherView(viewModel: AddWatcherViewModel(watchItem), state: $webViewStore.browserState)
             }
         }
     }

@@ -118,12 +118,18 @@ extension WebViewStore: WKScriptMessageHandler  {
         switch script {
         case .longPressEvent:
             
-            do {
-                let watchItem = try WatchItem(string: message.body)
-                browserState = .longTapDetected(watchItem: watchItem)
-            } catch {
-                print(error)
-            }
+            print(message.body)
+            
+            
+//            do {
+//
+                
+                
+//                let watchItem = try WatchItem(string: message.body)
+//                browserState = .longTapDetected(watchItem: watchItem)
+//            } catch {
+//                print(error)
+//            }
         default:
             return
         }
