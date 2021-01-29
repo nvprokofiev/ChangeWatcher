@@ -9,7 +9,7 @@ import Foundation
 
 class TestWatcherService {
     
-    static var shared: TestWatcherService
+    static var shared: TestWatcherService = TestWatcherService()
     
     private init() {}
     
