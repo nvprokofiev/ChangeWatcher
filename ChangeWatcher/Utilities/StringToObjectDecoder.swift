@@ -7,15 +7,13 @@
 
 import Foundation
 
-typealias JSMessageBody = Any
+struct StringToObjectDecoder {
 
-struct WatchItemParser {
-
-    static func parse(from string: JSMessageBody) throws -> WatchItem {
+    static func parse<T:Decodable>(to type: T.Type, from string: String) throws -> T {
 
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: string, options: .prettyPrinted)
-            let watchItem = try JSONDecoder().decode(WatchItem.self, from: jsonData)
+            let watchItem = try JSONDecoder().decode(type, from: jsonData)
             return watchItem
         } catch (let error) {
             throw(error)
