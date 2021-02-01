@@ -10,7 +10,7 @@ import UIKit
 class AddWatcherViewModel: ObservableObject {
 
     private let item: TestableWatchItem
-    let container: UIView
+    private let container: UIView
     
     lazy var positioningPoint: CGPoint = {
         getPositioningPoint()
@@ -21,10 +21,6 @@ class AddWatcherViewModel: ObservableObject {
         self.container = container
     }
     
-    func testWatchItem() {
-        
-    }
-    
     private func convertTapPointIntoGlobvalCoordinates(from view: UIView) -> CGPoint {
         let globalTapPoint = view.convert(item.tapPoint.point, to: UIScreen.main.coordinateSpace)
         return globalTapPoint
@@ -32,11 +28,11 @@ class AddWatcherViewModel: ObservableObject {
     
     private func getPositioningPoint() -> CGPoint {
         var point = convertTapPointIntoGlobvalCoordinates(from: container)
-
         point.y -= 70
-        
-        
-        
         return point
+    }
+    
+    func testWatchItem() {
+        
     }
 }

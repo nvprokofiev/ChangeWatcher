@@ -2,12 +2,13 @@
 //  TestWatcherError.swift
 //  ChangeWatcher
 //
-//  Created by Nikolai Prokofev on 2021-01-27.
+//  Created by Nikolai Prokofev on 2021-02-01.
 //
 
 import Foundation
 
-enum WatcherError: Error, CustomStringConvertible {
+enum TestWatcherError: Error, CustomStringConvertible {
+    
     case invalidURLString
     case failedHTMLGrabbing
     case failedHTMLParsing

@@ -21,6 +21,10 @@
 		67F52A8425C3C74C00E37A61 /* TestableWatchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A8325C3C74C00E37A61 /* TestableWatchItem.swift */; };
 		67F52A8725C3C7AF00E37A61 /* WebViewTapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A8625C3C7AF00E37A61 /* WebViewTapPoint.swift */; };
 		67F52A8B25C3CB1F00E37A61 /* Decodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A8A25C3CB1F00E37A61 /* Decodable+.swift */; };
+		67F52A9525C85DB900E37A61 /* SelectorTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A9425C85DB900E37A61 /* SelectorTester.swift */; };
+		67F52A9925C85ED300E37A61 /* TestWatcherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A9825C85ED300E37A61 /* TestWatcherError.swift */; };
+		67F52A9E25C85F9300E37A61 /* StringContentSelectorTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A9D25C85F9300E37A61 /* StringContentSelectorTester.swift */; };
+		67F52AA125C864E700E37A61 /* Result+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52AA025C864E700E37A61 /* Result+.swift */; };
 		67FC84EC25B53E130037F61C /* ChangeWatcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC84EB25B53E130037F61C /* ChangeWatcherApp.swift */; };
 		67FC84EE25B53E130037F61C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC84ED25B53E130037F61C /* ContentView.swift */; };
 		67FC84F025B53E150037F61C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67FC84EF25B53E150037F61C /* Assets.xcassets */; };
@@ -65,10 +69,13 @@
 		67F52A7025C263EE00E37A61 /* AddWatcherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatcherViewModel.swift; sourceTree = "<group>"; };
 		67F52A7425C2643E00E37A61 /* AddWatcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatcherView.swift; sourceTree = "<group>"; };
 		67F52A7825C270BD00E37A61 /* TestWatcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWatcherService.swift; sourceTree = "<group>"; };
-		67F52A7E25C2740200E37A61 /* TestWatcherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWatcherError.swift; sourceTree = "<group>"; };
 		67F52A8325C3C74C00E37A61 /* TestableWatchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableWatchItem.swift; sourceTree = "<group>"; };
 		67F52A8625C3C7AF00E37A61 /* WebViewTapPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewTapPoint.swift; sourceTree = "<group>"; };
 		67F52A8A25C3CB1F00E37A61 /* Decodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+.swift"; sourceTree = "<group>"; };
+		67F52A9425C85DB900E37A61 /* SelectorTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorTester.swift; sourceTree = "<group>"; };
+		67F52A9825C85ED300E37A61 /* TestWatcherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWatcherError.swift; sourceTree = "<group>"; };
+		67F52A9D25C85F9300E37A61 /* StringContentSelectorTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringContentSelectorTester.swift; sourceTree = "<group>"; };
+		67F52AA025C864E700E37A61 /* Result+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+.swift"; sourceTree = "<group>"; };
 		67FC84E825B53E130037F61C /* ChangeWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChangeWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67FC84EB25B53E130037F61C /* ChangeWatcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeWatcherApp.swift; sourceTree = "<group>"; };
 		67FC84ED25B53E130037F61C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -155,10 +162,20 @@
 		67F52A7B25C271B800E37A61 /* TestWatcher */ = {
 			isa = PBXGroup;
 			children = (
+				67F52A9C25C85F5B00E37A61 /* WebGrabber */,
 				67F52A7825C270BD00E37A61 /* TestWatcherService.swift */,
-				67F52A7E25C2740200E37A61 /* TestWatcherError.swift */,
+				67F52A9825C85ED300E37A61 /* TestWatcherError.swift */,
 			);
 			path = TestWatcher;
+			sourceTree = "<group>";
+		};
+		67F52A9C25C85F5B00E37A61 /* WebGrabber */ = {
+			isa = PBXGroup;
+			children = (
+				67F52A9425C85DB900E37A61 /* SelectorTester.swift */,
+				67F52A9D25C85F9300E37A61 /* StringContentSelectorTester.swift */,
+			);
+			path = WebGrabber;
 			sourceTree = "<group>";
 		};
 		67FC84DF25B53E130037F61C = {
@@ -289,6 +306,7 @@
 				67FC859325B92C930037F61C /* WebKit */,
 				67FC854325B5F7850037F61C /* String+.swift */,
 				67F52A8A25C3CB1F00E37A61 /* Decodable+.swift */,
+				67F52AA025C864E700E37A61 /* Result+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -455,6 +473,8 @@
 				67FC857425B7E8360037F61C /* YandexSearchEngine.swift in Sources */,
 				67FC859725B92CBD0037F61C /* WKWebViewConfiguration+.swift in Sources */,
 				67FC854725B5FEF00037F61C /* SearchRequestProvider.swift in Sources */,
+				67F52A9E25C85F9300E37A61 /* StringContentSelectorTester.swift in Sources */,
+				67F52AA125C864E700E37A61 /* Result+.swift in Sources */,
 				67FC853225B5E5170037F61C /* ToolbarButtonView.swift in Sources */,
 				67FC852625B5DDD60037F61C /* BrowserSearchView.swift in Sources */,
 				67FC854125B5F5A10037F61C /* SearchEngine.swift in Sources */,
@@ -477,7 +497,9 @@
 				679A619025C12D7000E10113 /* SwiftSoupHTMLParser.swift in Sources */,
 				67FC851A25B5422B0037F61C /* WebViewStore.swift in Sources */,
 				67FC851E25B5445E0037F61C /* WebCacheCleaner.swift in Sources */,
+				67F52A9525C85DB900E37A61 /* SelectorTester.swift in Sources */,
 				67FC852225B5DD1F0037F61C /* Watchable.swift in Sources */,
+				67F52A9925C85ED300E37A61 /* TestWatcherError.swift in Sources */,
 				67F52A6C25C2597E00E37A61 /* BrowserInitialView.swift in Sources */,
 				67FC852725B5DDD60037F61C /* BrowserToolbarView.swift in Sources */,
 				67FC850925B541110037F61C /* UIViewContainerView.swift in Sources */,
