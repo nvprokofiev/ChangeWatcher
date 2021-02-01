@@ -270,19 +270,21 @@ document.addEventListener("long-press", function (e) {
     let selectorV2 = CssSelectorGeneratorV2.getSelector(element);
     let optimalSelector = OptimalSelect.getSelector(element);
     let finderSelector = finder(element);
-    
+
     let value = element.innerText.replace(/(\r\n|\n|\r)/gm, "");
     let path = window.location.href;
     let faviconPath = path + "/favicon.ico";
-    
+
     var selectors = new Set([selectorV1, selectorV2, optimalSelector, finderSelector]);
     selectors = Array.from(selectors);
+    
+    let watchItem = {"selectors": selectors, "value": value, "urlString": path};
 
-    let message = {"selectors": selectors, "value": value, "urlString": path};
-
+    let clientX = e["detail"]["clientX"];
+    let clientY = e["detail"]["clientY"];
+    let tapPoint = {"clientX": clientX, "clientY": clientY};
     
-    
-    
+    let message = {"watchItem": watchItem, "tapPoint": tapPoint};
     
     element.classList.add('watch-element')
     

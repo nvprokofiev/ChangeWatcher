@@ -22,7 +22,7 @@ struct AddWatcherView: View {
                         }
                 )
             
-            HStack() {
+            HStack(spacing: 10) {
                 
                 Button(action: {
                     state = .running
@@ -38,6 +38,7 @@ struct AddWatcherView: View {
                 
             }
             .shadow(radius: 10)
+            .position(x: viewModel.positioningPoint.x, y: viewModel.positioningPoint.y)
         }
         .ignoresSafeArea()
         .buttonStyle(AppButtonStyle())

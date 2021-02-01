@@ -11,7 +11,7 @@ enum BrowserState {
     case initial
     case running // when set to running - remove all highlights
     case pageNotRechable
-    case longTapDetected(watchItem: WatchItem)
+    case longTapDetected(watchItem: TestableWatchItem)
 }
 
 struct BrowserView: View {
@@ -44,8 +44,8 @@ struct BrowserView: View {
             }
             .ignoresSafeArea(.all, edges: .bottom)
             
-            if case let BrowserState.longTapDetected(watchItem: watchItem) = browserState {
-                AddWatcherView(viewModel: AddWatcherViewModel(watchItem), state: $webViewStore.browserState)
+            if case let BrowserState.longTapDetected(watchItem: item) = browserState {
+                AddWatcherView(viewModel: AddWatcherViewModel(item, in: webViewStore.webView), state: $webViewStore.browserState)
             }
         }
     }

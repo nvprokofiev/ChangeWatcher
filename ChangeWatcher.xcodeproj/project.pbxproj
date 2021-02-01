@@ -14,11 +14,13 @@
 		679A618D25C12D5B00E10113 /* KannaHTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679A618C25C12D5B00E10113 /* KannaHTMLParser.swift */; };
 		679A619025C12D7000E10113 /* SwiftSoupHTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679A618F25C12D7000E10113 /* SwiftSoupHTMLParser.swift */; };
 		67F52A5D25C247E700E37A61 /* WatchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A5C25C247E700E37A61 /* WatchItem.swift */; };
-		67F52A6625C24A8E00E37A61 /* StringToObjectDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A6525C24A8E00E37A61 /* StringToObjectDecoder.swift */; };
 		67F52A6C25C2597E00E37A61 /* BrowserInitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A6B25C2597E00E37A61 /* BrowserInitialView.swift */; };
 		67F52A7125C263EE00E37A61 /* AddWatcherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A7025C263EE00E37A61 /* AddWatcherViewModel.swift */; };
 		67F52A7525C2643E00E37A61 /* AddWatcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A7425C2643E00E37A61 /* AddWatcherView.swift */; };
 		67F52A7925C270BD00E37A61 /* TestWatcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A7825C270BD00E37A61 /* TestWatcherService.swift */; };
+		67F52A8425C3C74C00E37A61 /* TestableWatchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A8325C3C74C00E37A61 /* TestableWatchItem.swift */; };
+		67F52A8725C3C7AF00E37A61 /* WebViewTapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A8625C3C7AF00E37A61 /* WebViewTapPoint.swift */; };
+		67F52A8B25C3CB1F00E37A61 /* Decodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A8A25C3CB1F00E37A61 /* Decodable+.swift */; };
 		67FC84EC25B53E130037F61C /* ChangeWatcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC84EB25B53E130037F61C /* ChangeWatcherApp.swift */; };
 		67FC84EE25B53E130037F61C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC84ED25B53E130037F61C /* ContentView.swift */; };
 		67FC84F025B53E150037F61C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67FC84EF25B53E150037F61C /* Assets.xcassets */; };
@@ -59,12 +61,14 @@
 		679A618C25C12D5B00E10113 /* KannaHTMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KannaHTMLParser.swift; sourceTree = "<group>"; };
 		679A618F25C12D7000E10113 /* SwiftSoupHTMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSoupHTMLParser.swift; sourceTree = "<group>"; };
 		67F52A5C25C247E700E37A61 /* WatchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchItem.swift; path = ../../../../Downloads/WatchItem.swift; sourceTree = "<group>"; };
-		67F52A6525C24A8E00E37A61 /* StringToObjectDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringToObjectDecoder.swift; sourceTree = "<group>"; };
 		67F52A6B25C2597E00E37A61 /* BrowserInitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserInitialView.swift; sourceTree = "<group>"; };
 		67F52A7025C263EE00E37A61 /* AddWatcherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatcherViewModel.swift; sourceTree = "<group>"; };
 		67F52A7425C2643E00E37A61 /* AddWatcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatcherView.swift; sourceTree = "<group>"; };
 		67F52A7825C270BD00E37A61 /* TestWatcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWatcherService.swift; sourceTree = "<group>"; };
 		67F52A7E25C2740200E37A61 /* TestWatcherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWatcherError.swift; sourceTree = "<group>"; };
+		67F52A8325C3C74C00E37A61 /* TestableWatchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableWatchItem.swift; sourceTree = "<group>"; };
+		67F52A8625C3C7AF00E37A61 /* WebViewTapPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewTapPoint.swift; sourceTree = "<group>"; };
+		67F52A8A25C3CB1F00E37A61 /* Decodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+.swift"; sourceTree = "<group>"; };
 		67FC84E825B53E130037F61C /* ChangeWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChangeWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67FC84EB25B53E130037F61C /* ChangeWatcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeWatcherApp.swift; sourceTree = "<group>"; };
 		67FC84ED25B53E130037F61C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -226,6 +230,8 @@
 				67FC856F25B7E7EF0037F61C /* SearchEngine */,
 				67F52A5C25C247E700E37A61 /* WatchItem.swift */,
 				67FC852125B5DD1F0037F61C /* Watchable.swift */,
+				67F52A8325C3C74C00E37A61 /* TestableWatchItem.swift */,
+				67F52A8625C3C7AF00E37A61 /* WebViewTapPoint.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,7 +250,6 @@
 		67FC851C25B5444C0037F61C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				67F52A6525C24A8E00E37A61 /* StringToObjectDecoder.swift */,
 				67FC853825B5F4A60037F61C /* RequestProvider */,
 				67FC851D25B5445E0037F61C /* WebCacheCleaner.swift */,
 			);
@@ -283,6 +288,7 @@
 			children = (
 				67FC859325B92C930037F61C /* WebKit */,
 				67FC854325B5F7850037F61C /* String+.swift */,
+				67F52A8A25C3CB1F00E37A61 /* Decodable+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -444,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67F52A8425C3C74C00E37A61 /* TestableWatchItem.swift in Sources */,
 				679A618D25C12D5B00E10113 /* KannaHTMLParser.swift in Sources */,
 				67FC857425B7E8360037F61C /* YandexSearchEngine.swift in Sources */,
 				67FC859725B92CBD0037F61C /* WKWebViewConfiguration+.swift in Sources */,
@@ -451,16 +458,16 @@
 				67FC853225B5E5170037F61C /* ToolbarButtonView.swift in Sources */,
 				67FC852625B5DDD60037F61C /* BrowserSearchView.swift in Sources */,
 				67FC854125B5F5A10037F61C /* SearchEngine.swift in Sources */,
+				67F52A8B25C3CB1F00E37A61 /* Decodable+.swift in Sources */,
 				67FC856125B6A16F0037F61C /* NetworkService.swift in Sources */,
 				67FC857125B7E8070037F61C /* GoogleSearchEngine.swift in Sources */,
-				67F52A6625C24A8E00E37A61 /* StringToObjectDecoder.swift in Sources */,
 				67FC859625B92CBD0037F61C /* WKUserScript+.swift in Sources */,
 				67FC852F25B5DF200037F61C /* Constants.swift in Sources */,
+				67F52A8725C3C7AF00E37A61 /* WebViewTapPoint.swift in Sources */,
 				67F52A5D25C247E700E37A61 /* WatchItem.swift in Sources */,
 				67FC857825B7EFC40037F61C /* SearchRequestError.swift in Sources */,
 				67FC84EE25B53E130037F61C /* ContentView.swift in Sources */,
 				67F52A7525C2643E00E37A61 /* AddWatcherView.swift in Sources */,
-				67F52A7F25C2740200E37A61 /* TestWatcherError.swift in Sources */,
 				679A618925C12CD600E10113 /* HTMLParser.swift in Sources */,
 				67FC851925B5422B0037F61C /* BrowserWebView.swift in Sources */,
 				67FC854425B5F7850037F61C /* String+.swift in Sources */,

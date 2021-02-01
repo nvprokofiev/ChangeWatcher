@@ -117,19 +117,21 @@ extension WebViewStore: WKScriptMessageHandler  {
         
         switch script {
         case .longPressEvent:
-            
-            print(message.body)
-            
-            
-//            do {
-//
+
+            do {
                 
+                let testable = try TestableWatchItem(decodable: message.body)
                 
-//                let watchItem = try WatchItem(string: message.body)
-//                browserState = .longTapDetected(watchItem: watchItem)
-//            } catch {
-//                print(error)
-//            }
+//                let view = UIView()
+//                view.frame.size = CGSize(width: 50, height: 50)
+//                view.center = TapPointHelper(tapPoint: testable.tapPoint.point).convertTatPointIntoGlobvalCoordinates(from: webView)
+//                view.backgroundColor = .red
+//                UIApplication.shared.windows.first!.addSubview(view)
+
+                browserState = .longTapDetected(watchItem: testable)
+            } catch {
+                print(error)
+            }
         default:
             return
         }
