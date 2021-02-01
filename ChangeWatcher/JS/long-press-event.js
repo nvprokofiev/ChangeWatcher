@@ -271,7 +271,7 @@ document.addEventListener("long-press", function (e) {
     let optimalSelector = OptimalSelect.getSelector(element);
     let finderSelector = finder(element);
 
-    let value = element.innerText.replace(/(\r\n|\n|\r)/gm, "");
+    let value = element.innerText.replace(/(\r\n|\n|\r)/gm, "").trim();
     let path = window.location.href;
     let faviconPath = path + "/favicon.ico";
 
