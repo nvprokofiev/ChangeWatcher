@@ -10,7 +10,7 @@ import Foundation
 class TestWatcherService {
     
     static var shared: TestWatcherService = TestWatcherService()
-    let tester = StringContentSelectorTester()
+    let tester = ErikSelectorTester()
     
     private init() {}
     
@@ -39,67 +39,6 @@ class TestWatcherService {
         }
         
     }
-    
-//    func test(item: WatchItem,
-//              with grabber: WebGrabber,
-//              completion: @escaping ((Swift.Result<Void, TestWatcherError>) -> Void )){
-//
-
-//
-//        switch grabber {
-//        case .stringContent:
-//            asString(from: url, for: item, completion: completion)
-//        default:
-//            print("hello")
-//
-//        }
-//    }
-    
-    
-    /*
-    
-    private func asString(from url: URL,
-                          for item: WatchingItem,
-                          completion: @escaping ((Swift.Result<Void, WatcherError>) -> Void )){
-        
-        guard let html = try? String(contentsOf: url) else {
-            completion(.failure(.failedHTMLGrabbing))
-            return
-        }
-        guard let body = try? SwiftSoup.parse(html).body() else {
-            completion(.failure(.failedHTMLParsing))
-            return
-        }
-        
-        do {
-            let elements = try body.select(item.selector)
-            
-            guard elements.count <= 1 else {
-                completion(.failure(.multipleValuesFound))
-                return
-            }
-            
-            guard let element = elements.first() else {
-                completion(.failure(.valueNotFound))
-                return
-            }
-            guard let value = try? element.text() else {
-                completion(.failure(.unableToGetOuterHTML))
-                return
-            }
-            
-            guard value == item.value else {
-                completion(.failure(.mismatchedValue(value: item.value, newValue: value)))
-                return
-            }
-            completion(.success)
-            
-        } catch (let error) {
-            print("☹️ selector", error)
-            completion(.failure(.failedHTMLScrapig))
-        }
-    }
-     */
 }
 
 

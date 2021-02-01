@@ -45,7 +45,7 @@ class StringContentSelectorTester: SelectorTester {
                 succedSelectors.append(selector)
             }
             
-            return completion(.success(succedSelectors))
+            completion(.success(succedSelectors))
             
         } catch (let error) {
             print("☹️ selector", error)
