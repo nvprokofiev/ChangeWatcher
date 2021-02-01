@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TestWatcherError: Error, CustomStringConvertible {
+enum TestWatcherError: Error {
     
     case invalidURLString
     case failedHTMLGrabbing

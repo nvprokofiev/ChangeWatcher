@@ -20,9 +20,12 @@ class StringContentSelectorTester: SelectorTester {
         }
         
         var succedSelectors = [CSSSelector]()
+        print(selectors)
         
         do {
             try selectors.forEach { selector in
+                
+                print(selector)
                 let elements = try body.select(selector)
                 
                 guard elements.count <= 1 else {
@@ -40,6 +43,7 @@ class StringContentSelectorTester: SelectorTester {
                 guard testValue == value else {
                     return print((TestWatcherError.mismatchedValue(value: value, newValue: testValue)))
                 }
+                
                 succedSelectors.append(selector)
             }
             

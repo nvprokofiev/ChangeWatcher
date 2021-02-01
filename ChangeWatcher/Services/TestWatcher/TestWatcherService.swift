@@ -10,10 +10,11 @@ import Foundation
 class TestWatcherService {
     
     static var shared: TestWatcherService = TestWatcherService()
+    let tester = StringContentSelectorTester()
     
     private init() {}
     
-    func test(item: WatchItem, using tester: SelectorTester, completion: @escaping ((Swift.Result<Void, TestWatcherError>) -> Void )){
+    func test(_ item: WatchItem, completion: @escaping ((Swift.Result<Void, TestWatcherError>) -> Void )){
         
         guard let url = URL(string: item.urlString) else {
             completion(.failure(.invalidURLString))
@@ -27,7 +28,7 @@ class TestWatcherService {
         }
         
         let value = item.value
-        
+
         tester.test(selectors: selectors, from: url, matching: value) { result in
             switch result {
                 case .success(let selectors):

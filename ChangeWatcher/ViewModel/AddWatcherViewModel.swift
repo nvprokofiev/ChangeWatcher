@@ -33,6 +33,8 @@ class AddWatcherViewModel: ObservableObject {
     }
     
     func testWatchItem() {
-        
+        TestWatcherService.shared.test(item.watchItem) { result in
+            
+        }
     }
 }

@@ -26,14 +26,13 @@ struct AddWatcherView: View {
                 
                 Button(action: {
                     state = .running
-                    viewModel.testWatchItem()
                     
                 }, label: {
                    Image(systemName: "xmark")
                 })
                 
                 Button(action: {
-                    print("yes")
+                    viewModel.testWatchItem()
                 }, label: {
                    Image(systemName: "checkmark")
                 })
