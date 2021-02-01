@@ -20,28 +20,26 @@ class StringContentSelectorTester: SelectorTester {
         }
         
         var succedSelectors = [CSSSelector]()
-        print(selectors)
         
         do {
             try selectors.forEach { selector in
                 
-                print(selector)
                 let elements = try body.select(selector)
                 
                 guard elements.count <= 1 else {
-                    return print(TestWatcherError.multipleValuesFound)
+                    return print(selector, TestWatcherError.multipleValuesFound)
                 }
                 
                 guard let element = elements.first() else {
-                    return print(TestWatcherError.valueNotFound)
+                    return print(selector, TestWatcherError.valueNotFound)
                 }
                 
                 guard let testValue = try? element.text() else {
-                    return print(TestWatcherError.unableToGetOuterHTML)
+                    return print(selector, TestWatcherError.unableToGetOuterHTML)
                 }
                 
-                guard testValue == value else {
-                    return print((TestWatcherError.mismatchedValue(value: value, newValue: testValue)))
+                guard testValue.lowercased() == value.lowercased() else {
+                    return print(selector, TestWatcherError.mismatchedValue(value: value, newValue: testValue))
                 }
                 
                 succedSelectors.append(selector)
