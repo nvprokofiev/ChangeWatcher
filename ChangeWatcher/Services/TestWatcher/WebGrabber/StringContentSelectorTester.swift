@@ -10,13 +10,13 @@ import SwiftSoup
 
 class StringContentSelectorTester: SelectorTester {
 
-    func test(selectors: [CSSSelector], from url: URL, matching value: String, completion: @escaping (Result<[CSSSelector], TestWatcherError>)->Void ) {
+    func test(selectors: [CSSSelector], from url: URL, matching value: String, completion: @escaping (Result<[CSSSelector], Error>)->Void ) {
         
         guard let html = try? String(contentsOf: url) else {
-            return completion(.failure(.failedHTMLGrabbing))
+            return completion(.failure(TestWatcherError.failedHTMLGrabbing))
         }
         guard let body = try? SwiftSoup.parse(html).body() else {
-            return completion(.failure(.failedHTMLParsing))
+            return completion(.failure(TestWatcherError.failedHTMLParsing))
         }
         
         var succedSelectors = [CSSSelector]()
@@ -49,7 +49,7 @@ class StringContentSelectorTester: SelectorTester {
             
         } catch (let error) {
             print("☹️ selector", error)
-            return completion(.failure(.failedHTMLScrapig))
+            return completion(.failure(TestWatcherError.failedHTMLScrapig))
         }
     }
 }

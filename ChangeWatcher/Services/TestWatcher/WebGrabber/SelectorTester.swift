@@ -10,5 +10,5 @@ import Foundation
 typealias CSSSelector = String
 
 protocol SelectorTester {
-    func test(selectors: [CSSSelector], from url: URL, matching value: String, completion: @escaping (Result<[CSSSelector], TestWatcherError>)->Void)
+    func test(selectors: [CSSSelector], from url: URL, matching value: String, completion: @escaping (Result<[CSSSelector], Error>)->Void)
 }

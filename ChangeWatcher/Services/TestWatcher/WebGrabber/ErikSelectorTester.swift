@@ -9,18 +9,18 @@ import Foundation
 import SwiftSoup
 class ErikSelectorTester: SelectorTester {
     
-    func test(selectors: [CSSSelector], from url: URL, matching value: String, completion: @escaping (Result<[CSSSelector], TestWatcherError>) -> Void) {
+    func test(selectors: [CSSSelector], from url: URL, matching value: String, completion: @escaping (Result<[CSSSelector], Error>) -> Void) {
         
         
         Erik.visit(url: url) { result in
             
             switch result {
             case .failure(let error):
-                return completion(.failure(.failedHTMLScrapig))
+                return completion(.failure(error))
             case .success(let html):
                 
                 guard let body = try? SwiftSoup.parse(html).body() else {
-                    return completion(.failure(.failedHTMLParsing))
+                    return completion(.failure(TestWatcherError.failedHTMLParsing))
                 }
                 
                 var succedSelectors = [CSSSelector]()
@@ -53,7 +53,7 @@ class ErikSelectorTester: SelectorTester {
                     
                 } catch (let error) {
                     print("☹️ selector", error)
-                    return completion(.failure(.failedHTMLScrapig))
+                    return completion(.failure(TestWatcherError.failedHTMLScrapig))
                 }
             }
         }
