@@ -10,26 +10,21 @@ import Foundation
 class TestWatcherService {
     
     static var shared: TestWatcherService = TestWatcherService()
-    let tester = ErikSelectorTester()
     
     private init() {}
     
     func test(_ item: WatchItem, completion: @escaping ((Swift.Result<Void, TestWatcherError>) -> Void )){
         
+
         guard let url = URL(string: item.urlString) else {
             completion(.failure(.invalidURLString))
             return
         }
         
-        let selectors = item.selectors
+        let params = SelectorTesterParameters(url: url, matchValue: item.value, selectors: item.selectors)
+        let tester = ErikSelectorTester(parameters: params)
 
-        guard !selectors.isEmpty else {
-            return print("No Selectors")
-        }
-        
-        let value = item.value
-
-        tester.test(selectors: selectors, from: url, matching: value) { result in
+        tester.test { result in
             switch result {
                 case .success(let selectors):
                         print(selectors)
@@ -37,7 +32,6 @@ class TestWatcherService {
                     print(error)
             }
         }
-        
     }
 }
 

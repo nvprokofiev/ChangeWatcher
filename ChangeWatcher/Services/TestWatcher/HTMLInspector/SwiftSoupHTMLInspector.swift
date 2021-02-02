@@ -1,20 +1,21 @@
 //
-//  StringContentSelectorTester.swift
+//  SwiftSoupHTMLInspector.swift
 //  ChangeWatcher
 //
-//  Created by Nikolai Prokofev on 2021-02-01.
+//  Created by Nikolai Prokofev on 2021-02-02.
 //
 
 import Foundation
 import SwiftSoup
 
-class StringContentSelectorTester: SelectorTester {
+class SwiftSoupHTMLInspector: HTMLInspector {
+    
+    static let shared: SwiftSoupHTMLInspector = SwiftSoupHTMLInspector()
+    
+    private init() {}
+    
+    func inspect(_ html: HTML, for selectors: [CSSSelector], matching value: String, _ completion: @escaping (Result<[CSSSelector], Error>)-> Void) {
 
-    func test(selectors: [CSSSelector], from url: URL, matching value: String, completion: @escaping (Result<[CSSSelector], Error>)->Void ) {
-        
-        guard let html = try? String(contentsOf: url) else {
-            return completion(.failure(TestWatcherError.failedHTMLGrabbing))
-        }
         guard let body = try? SwiftSoup.parse(html).body() else {
             return completion(.failure(TestWatcherError.failedHTMLParsing))
         }
