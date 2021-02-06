@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6746F74F25CCFD2B003F4909 /* dompath.js in Resources */ = {isa = PBXBuildFile; fileRef = 6746F74E25CCFD2B003F4909 /* dompath.js */; };
+		6746F75225CCFEC7003F4909 /* simmerjs.js in Resources */ = {isa = PBXBuildFile; fileRef = 6746F75125CCFEC7003F4909 /* simmerjs.js */; };
 		674FD8B425C07F0100A90939 /* css-selector-generator-v2.js in Resources */ = {isa = PBXBuildFile; fileRef = 674FD8B325C07F0100A90939 /* css-selector-generator-v2.js */; };
 		679A618225C12BF400E10113 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 679A618125C12BF400E10113 /* SwiftSoup */; };
 		67F52A5D25C247E700E37A61 /* WatchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A5C25C247E700E37A61 /* WatchItem.swift */; };
@@ -62,6 +64,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6746F74E25CCFD2B003F4909 /* dompath.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dompath.js; sourceTree = "<group>"; };
+		6746F75125CCFEC7003F4909 /* simmerjs.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = simmerjs.js; sourceTree = "<group>"; };
 		674FD8B325C07F0100A90939 /* css-selector-generator-v2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "css-selector-generator-v2.js"; sourceTree = "<group>"; };
 		67F52A5C25C247E700E37A61 /* WatchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchItem.swift; path = ../../../../Downloads/WatchItem.swift; sourceTree = "<group>"; };
 		67F52A6B25C2597E00E37A61 /* BrowserInitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserInitialView.swift; sourceTree = "<group>"; };
@@ -377,9 +381,11 @@
 		67FC85B325C05CEC0037F61C /* CssSelectorGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				6746F75125CCFEC7003F4909 /* simmerjs.js */,
 				67FC858225B92BF30037F61C /* finder.js */,
 				67FC858125B92BF30037F61C /* css-selector-generator.js */,
 				674FD8B325C07F0100A90939 /* css-selector-generator-v2.js */,
+				6746F74E25CCFD2B003F4909 /* dompath.js */,
 				67FC85AF25BF5AA70037F61C /* optimal-select.js */,
 			);
 			path = CssSelectorGenerator;
@@ -466,9 +472,11 @@
 				67FC84F325B53E150037F61C /* Preview Assets.xcassets in Resources */,
 				67FC84F025B53E150037F61C /* Assets.xcassets in Resources */,
 				674FD8B425C07F0100A90939 /* css-selector-generator-v2.js in Resources */,
+				6746F74F25CCFD2B003F4909 /* dompath.js in Resources */,
 				67FC858D25B92BF30037F61C /* finder.js in Resources */,
 				67FC858C25B92BF30037F61C /* css-selector-generator.js in Resources */,
 				67FC85B025BF5AA70037F61C /* optimal-select.js in Resources */,
+				6746F75225CCFEC7003F4909 /* simmerjs.js in Resources */,
 				67FC858925B92BF30037F61C /* remove-all-highlights.js in Resources */,
 				67FC858B25B92BF30037F61C /* highlight-selected-element.js in Resources */,
 			);

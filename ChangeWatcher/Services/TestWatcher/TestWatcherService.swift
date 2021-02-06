@@ -27,7 +27,7 @@ class TestWatcherService {
         tester.test { result in
             switch result {
                 case .success(let selectors):
-                        print(selectors)
+                    print(selectors)
                 case .failure(let error):
                     print(error)
             }

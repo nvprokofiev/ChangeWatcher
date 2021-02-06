@@ -274,7 +274,9 @@ extension WebKitLayoutEngine {
     }
     
     fileprivate func handleHTML(_ completionHandler: CompletionHandler?) {
-        javaScriptQueue.async { [unowned self] in
+        
+        #warning("Handle delay")
+        javaScriptQueue.asyncAfter(deadline: .now() + 1.5) { [unowned self] in
          
             self.webView.evaluateJavaScript(self.javascriptToGetContent.javascript) { [unowned self] (obj, error) -> Void in
                 self.javaScriptQueue.async {
