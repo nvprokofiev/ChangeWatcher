@@ -11,5 +11,5 @@ typealias HTML = String
 
 protocol HTMLInspector {
     
-    func inspect(_ html: HTML, for selectors: [CSSSelector], matching value: String, _ completion: @escaping (Result<[CSSSelector], Error>)-> Void)
+    func inspect(_ html: HTML, for selectors: [CSSSelector], matching value: String, _ completion: @escaping (Result<[CSSSelector], TestWatcherError>)-> Void)
 }

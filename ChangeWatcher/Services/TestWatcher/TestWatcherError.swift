@@ -17,11 +17,14 @@ enum TestWatcherError: Error {
     case multipleValuesFound
     case unableToGetOuterHTML
     case mismatchedValue(value: String, newValue: String)
+    case other(Error)
     
     var description: String {
         switch self {
         case .mismatchedValue(let value, let newValue):
             return "Mismatched value: \(value) -/- \(newValue)"
+        case .other(let error):
+            return "Error: \(error.localizedDescription)"
         default:
             return String(describing: self)
         }

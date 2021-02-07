@@ -14,7 +14,7 @@ class SwiftSoupHTMLInspector: HTMLInspector {
     
     private init() {}
     
-    func inspect(_ html: HTML, for selectors: [CSSSelector], matching value: String, _ completion: @escaping (Result<[CSSSelector], Error>)-> Void) {
+    func inspect(_ html: HTML, for selectors: [CSSSelector], matching value: String, _ completion: @escaping (Result<[CSSSelector], TestWatcherError>)-> Void) {
 
         guard let body = try? SwiftSoup.parse(html).body() else {
             return completion(.failure(TestWatcherError.failedHTMLParsing))

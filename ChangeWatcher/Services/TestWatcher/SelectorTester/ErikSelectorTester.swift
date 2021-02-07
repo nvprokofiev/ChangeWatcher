@@ -10,23 +10,13 @@ import Foundation
 struct ErikSelectorTester: SelectorTester {
     
     var parameters: SelectorTesterParameters
+    var nextTester: SelectorTester?
     
-    func test(_ completion: @escaping (Result<[CSSSelector], Error>)-> Void) {
-        getHTML(from: parameters.url) { result in
+    func getHTML(_ completion: @escaping (Result<String, TestWatcherError>) -> Void) {
+        Erik.visit(url: parameters.url) { result in
             switch result {
             case .failure(let error):
-                completion(.failure(error))
-            case .success(let html):
-                SwiftSoupHTMLInspector.shared.inspect(html, for: parameters.selectors, matching: parameters.matchValue, completion)
-            }
-        }
-    }
-
-    private func getHTML(from url: URL, _ completion: @escaping (Result<String, Error>) -> Void) {
-        Erik.visit(url: url) { result in
-            switch result {
-            case .failure(let error):
-                return completion(.failure(error))
+                return completion(.failure(.other(error)))
             case .success(let html):
                 completion(.success(html))
             }
