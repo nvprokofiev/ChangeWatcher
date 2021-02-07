@@ -258,6 +258,71 @@
 
 }(window, document));
         
+        (function(window, document) {
+            window.dompath = function(el, parent) {
+                parent = parent || document.body;
+                if(el.nodeName) {
+                    return new DomPath(pathNode(el, parent));
+                }
+
+                return new DomPath(el.node);
+            };
+
+            var getSelector = function(node) {
+                if(node.id !== '') {
+                    return '#' + node.id;
+                }
+
+                var root = '';
+                if(node.parent) {
+                    root = getSelector(node.parent) + ' > ';
+                }
+
+                return root + node.name + ':nth-child(' + (node.index + 1) + ')';
+            };
+
+            var DomPath = function(node) { this.node = node; };
+            DomPath.prototype = {
+                toCSS: function() {
+                    return getSelector(this.node);
+                },
+            
+                select: function() {
+                    if(this.node.id !== '') {
+                        return document.getElementById(this.node.id);
+                    }
+
+                    return document.querySelector(this.toCSS());
+                }
+            };
+
+            var pathNode = function(el, root) {
+                var node = {
+                    id: el.id,
+                    name: el.nodeName.toLowerCase(),
+                    index: childIndex(el),
+                    parent: null
+                };
+
+                if(el.parentElement && el.parentElement !== root) {
+                    node.parent = pathNode(el.parentElement, root);
+                }
+
+                return node;
+            };
+
+            var childIndex = function(el) {
+                var idx = 0;
+                while(el = el.previousSibling) {
+                    if(el.nodeType == 1) {
+                        idx++;
+                    }
+                }
+
+                return idx;
+            };
+        })(window, document);
+        
 document.addEventListener("long-press", function (e) {
 
     e.preventDefault();
@@ -271,20 +336,27 @@ document.addEventListener("long-press", function (e) {
     let optimalSelector = OptimalSelect.getSelector(element);
     let finderSelector = finder(element);
     
-    let value = element.innerText.replace(/(\r\n|\n|\r)/gm, "");
+//    var dompathSelector = dompath(element).toCSS();
+//    let simmerjsSelector = SimmerJS.getSelector(element);
+
+
+    let value = element.innerText.replace(/(\r\n|\n|\r)/gm, "").trim();
     let path = window.location.href;
     let faviconPath = path + "/favicon.ico";
-    
+
     var selectors = new Set([selectorV1, selectorV2, optimalSelector, finderSelector]);
+
     selectors = Array.from(selectors);
+    
+    let watchItem = {"selectors": selectors, "value": value, "urlString": path};
 
-    let message = {"selector": selector, "value": value, "urlString": path};
-
+    let clientX = e["detail"]["clientX"];
+    let clientY = e["detail"]["clientY"];
+    let tapPoint = {"clientX": clientX, "clientY": clientY};
     
-    
-    
+    let message = {"watchItem": watchItem, "tapPoint": tapPoint};
     
     element.classList.add('watch-element')
     
-    window.webkit.messageHandlers['longPressEvent'].postMessage(selectors);
+    window.webkit.messageHandlers['longPressEvent'].postMessage(message);
 })
