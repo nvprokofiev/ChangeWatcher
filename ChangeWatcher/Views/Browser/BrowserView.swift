@@ -7,54 +7,37 @@
 
 import SwiftUI
 
-enum BrowserState {
-    case initial
-    case running // when set to running - remove all highlights
-    case pageNotRechable
-    case longTapDetected(watchItem: TestableWatchItem)
-}
-
 struct BrowserView: View {
     
-    @State var query = String()
-    @StateObject var webViewStore = WebViewStore()
-    
-    var browserState: BrowserState {
-        webViewStore.browserState
-    }
-    
-    private var estimatedProgress: Double {
-        webViewStore.webView.estimatedProgress
-    }
-    
+    @ObservedObject private var viewModel = BrowserViewModel()
+
     var body: some View {
 
         ZStack {
             VStack(spacing: 2) {
                 HStack(spacing: 0) {
-                    BrowserSearchView(searchText: $webViewStore.query)
+                    BrowserSearchView(searchText: $viewModel.query)
                         .padding(.horizontal, 10)
                 }
                 ZStack {
-
-                    BrowserWebView(webView: webViewStore.webView )
-                        .padding(.bottom, -4)
+                    BrowserWebView(webView: viewModel.webView )
                     progressView
                 }
                 toolbarView
             }
             .ignoresSafeArea(.all, edges: .bottom)
             
-            if case let BrowserState.longTapDetected(watchItem: item) = browserState {
-                AddWatcherView(viewModel: AddWatcherViewModel(item, in: webViewStore.webView), state: $webViewStore.browserState)
+            if case let BrowserState.longTapDetected(point: point) = viewModel.state {
+                AddWatcherView(viewModel: viewModel, at: point)
             }
         }
     }
     
     private var progressView: some View {
-        if estimatedProgress > 0 && estimatedProgress < 1 {
+        let progress = viewModel.estimatedProgress
+        if progress > 0 && progress < 1 {
             return AnyView( VStack {
-                ProgressView(value: estimatedProgress)
+                ProgressView(value: progress)
                     .progressViewStyle(LinearProgressViewStyle())
                     .animation(.easeIn)
                 Spacer()
@@ -66,8 +49,8 @@ struct BrowserView: View {
     }
     
     private var toolbarView: some View {
-        AnyView(BrowserToolbarView(backButtonHandler: (webViewStore.webView.canGoBack, webViewStore.goBack),
-                           forwardButtonHandler: (webViewStore.webView.canGoForward, webViewStore.goForward)))
+        AnyView(BrowserToolbarView(backButton: (viewModel.canGoBack, viewModel.goBack),
+                                   forwardButton: (viewModel.canGoForward, viewModel.goForward)))
     }
 }
 

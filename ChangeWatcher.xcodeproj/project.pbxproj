@@ -11,9 +11,10 @@
 		6746F75225CCFEC7003F4909 /* simmerjs.js in Resources */ = {isa = PBXBuildFile; fileRef = 6746F75125CCFEC7003F4909 /* simmerjs.js */; };
 		674FD8B425C07F0100A90939 /* css-selector-generator-v2.js in Resources */ = {isa = PBXBuildFile; fileRef = 674FD8B325C07F0100A90939 /* css-selector-generator-v2.js */; };
 		679A618225C12BF400E10113 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 679A618125C12BF400E10113 /* SwiftSoup */; };
+		679F82E025D30D60005D4960 /* BrowserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679F82DF25D30D60005D4960 /* BrowserState.swift */; };
+		679F82E325D30D76005D4960 /* BrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679F82E225D30D76005D4960 /* BrowserViewModel.swift */; };
 		67F52A5D25C247E700E37A61 /* WatchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A5C25C247E700E37A61 /* WatchItem.swift */; };
 		67F52A6C25C2597E00E37A61 /* BrowserInitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A6B25C2597E00E37A61 /* BrowserInitialView.swift */; };
-		67F52A7125C263EE00E37A61 /* AddWatcherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A7025C263EE00E37A61 /* AddWatcherViewModel.swift */; };
 		67F52A7525C2643E00E37A61 /* AddWatcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A7425C2643E00E37A61 /* AddWatcherView.swift */; };
 		67F52A7925C270BD00E37A61 /* TestWatcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A7825C270BD00E37A61 /* TestWatcherService.swift */; };
 		67F52A8425C3C74C00E37A61 /* TestableWatchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A8325C3C74C00E37A61 /* TestableWatchItem.swift */; };
@@ -67,9 +68,10 @@
 		6746F74E25CCFD2B003F4909 /* dompath.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dompath.js; sourceTree = "<group>"; };
 		6746F75125CCFEC7003F4909 /* simmerjs.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = simmerjs.js; sourceTree = "<group>"; };
 		674FD8B325C07F0100A90939 /* css-selector-generator-v2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "css-selector-generator-v2.js"; sourceTree = "<group>"; };
+		679F82DF25D30D60005D4960 /* BrowserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserState.swift; sourceTree = "<group>"; };
+		679F82E225D30D76005D4960 /* BrowserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewModel.swift; sourceTree = "<group>"; };
 		67F52A5C25C247E700E37A61 /* WatchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchItem.swift; path = ../../../../Downloads/WatchItem.swift; sourceTree = "<group>"; };
 		67F52A6B25C2597E00E37A61 /* BrowserInitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserInitialView.swift; sourceTree = "<group>"; };
-		67F52A7025C263EE00E37A61 /* AddWatcherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatcherViewModel.swift; sourceTree = "<group>"; };
 		67F52A7425C2643E00E37A61 /* AddWatcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatcherView.swift; sourceTree = "<group>"; };
 		67F52A7825C270BD00E37A61 /* TestWatcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWatcherService.swift; sourceTree = "<group>"; };
 		67F52A8325C3C74C00E37A61 /* TestableWatchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableWatchItem.swift; sourceTree = "<group>"; };
@@ -133,6 +135,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		679F82DE25D30D47005D4960 /* Browser */ = {
+			isa = PBXGroup;
+			children = (
+				679F82DF25D30D60005D4960 /* BrowserState.swift */,
+				679F82E225D30D76005D4960 /* BrowserViewModel.swift */,
+			);
+			path = Browser;
+			sourceTree = "<group>";
+		};
 		67F52A6325C24A6F00E37A61 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,18 +152,10 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		67F52A6E25C2638600E37A61 /* AddWatcherView */ = {
-			isa = PBXGroup;
-			children = (
-				67F52A7425C2643E00E37A61 /* AddWatcherView.swift */,
-			);
-			path = AddWatcherView;
-			sourceTree = "<group>";
-		};
 		67F52A6F25C263C600E37A61 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				67F52A7025C263EE00E37A61 /* AddWatcherViewModel.swift */,
+				679F82DE25D30D47005D4960 /* Browser */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -220,7 +223,6 @@
 				67FC855F25B6A1460037F61C /* Services */,
 				67FC853725B5F4530037F61C /* Extensions */,
 				67FC852925B5DEB70037F61C /* Common */,
-				67FC852025B5DCFD0037F61C /* Protocols */,
 				67FC851C25B5444C0037F61C /* Utilities */,
 				67FC84FB25B53FB10037F61C /* App */,
 				67FC850025B540940037F61C /* Model */,
@@ -277,7 +279,6 @@
 				67FC851525B5422B0037F61C /* BrowserView.swift */,
 				67FC851725B5422B0037F61C /* WebViewStore.swift */,
 				67FC853525B5E5C70037F61C /* Components */,
-				67F52A6E25C2638600E37A61 /* AddWatcherView */,
 			);
 			path = Browser;
 			sourceTree = "<group>";
@@ -290,13 +291,6 @@
 				67FC851D25B5445E0037F61C /* WebCacheCleaner.swift */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		67FC852025B5DCFD0037F61C /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		67FC852925B5DEB70037F61C /* Common */ = {
@@ -314,6 +308,7 @@
 				67FC852425B5DDD60037F61C /* BrowserSearchView.swift */,
 				67FC852525B5DDD60037F61C /* BrowserToolbarView.swift */,
 				67FC853125B5E5170037F61C /* ToolbarButtonView.swift */,
+				67F52A7425C2643E00E37A61 /* AddWatcherView.swift */,
 				67F52A6B25C2597E00E37A61 /* BrowserInitialView.swift */,
 			);
 			path = Components;
@@ -518,14 +513,15 @@
 				67FC854425B5F7850037F61C /* String+.swift in Sources */,
 				67FC84EC25B53E130037F61C /* ChangeWatcherApp.swift in Sources */,
 				67F52A7925C270BD00E37A61 /* TestWatcherService.swift in Sources */,
-				67F52A7125C263EE00E37A61 /* AddWatcherViewModel.swift in Sources */,
 				67FC851A25B5422B0037F61C /* WebViewStore.swift in Sources */,
 				67FC851E25B5445E0037F61C /* WebCacheCleaner.swift in Sources */,
 				67F52A9525C85DB900E37A61 /* SelectorTester.swift in Sources */,
 				67FC852225B5DD1F0037F61C /* Watchable.swift in Sources */,
+				679F82E025D30D60005D4960 /* BrowserState.swift in Sources */,
 				67F52A9925C85ED300E37A61 /* TestWatcherError.swift in Sources */,
 				67F52A6C25C2597E00E37A61 /* BrowserInitialView.swift in Sources */,
 				67FC852725B5DDD60037F61C /* BrowserToolbarView.swift in Sources */,
+				679F82E325D30D76005D4960 /* BrowserViewModel.swift in Sources */,
 				67FC850925B541110037F61C /* UIViewContainerView.swift in Sources */,
 				67FC851825B5422B0037F61C /* BrowserView.swift in Sources */,
 			);

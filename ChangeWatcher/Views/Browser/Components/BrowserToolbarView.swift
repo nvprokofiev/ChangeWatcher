@@ -11,8 +11,8 @@ typealias ToolbarButtonHandler = (enabled: Bool, action: ()->())
 
 struct BrowserToolbarView: View {
     
-    var backButtonHandler: ToolbarButtonHandler
-    var forwardButtonHandler: ToolbarButtonHandler
+    var backButton: ToolbarButtonHandler
+    var forwardButton: ToolbarButtonHandler
     
     var body: some View {
         
@@ -22,14 +22,13 @@ struct BrowserToolbarView: View {
                 .foregroundColor(.secondary)
                 .padding(.bottom, 16)
             HStack {
-                ToolbarButtonView(systemImage: "arrow.left", handler: backButtonHandler)
+                ToolbarButtonView(systemImage: "arrow.left", handler: backButton)
                     .padding(.leading, 30)
-                ToolbarButtonView(systemImage: "arrow.right", handler: forwardButtonHandler)
+                ToolbarButtonView(systemImage: "arrow.right", handler: forwardButton)
                     .padding(.leading, 30)
                 Spacer()
-                ToolbarButtonView(systemImage: "arrow.clockwise", handler: backButtonHandler)
-                    .padding(.trailing, 30)
             }
+            Spacer()
         }
         .frame(height: 44)
         .padding(.bottom, 20)

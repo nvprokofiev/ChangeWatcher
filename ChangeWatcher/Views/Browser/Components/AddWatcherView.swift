@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct AddWatcherView: View {
+
+    private var viewModel: BrowserViewModel
+    private var positionPoint: CGPoint
     
-    @ObservedObject var viewModel: AddWatcherViewModel
-    @Binding var state: BrowserState
+    init(viewModel: BrowserViewModel, at point: CGPoint) {
+        self.viewModel = viewModel
+        self.positionPoint = point
+    }
     
     var body: some View {
         ZStack {
@@ -18,43 +23,30 @@ struct AddWatcherView: View {
                 .gesture(
                     TapGesture()
                         .onEnded { _ in
-                            state = .running
+                            viewModel.state = .running
                         }
                 )
             
             HStack(spacing: 10) {
                 
                 Button(action: {
-                    state = .running
-                    
+                    viewModel.cancel()
                 }, label: {
                    Image(systemName: "xmark")
                 })
-                
                 Button(action: {
-                    viewModel.testWatchItem()
+                    viewModel.add()
                 }, label: {
                    Image(systemName: "checkmark")
                 })
-                
             }
             .shadow(radius: 10)
-            .position(x: viewModel.positioningPoint.x, y: viewModel.positioningPoint.y)
+            .position(x: positionPoint.x, y: positionPoint.y)
         }
         .ignoresSafeArea()
         .buttonStyle(AppButtonStyle())
-
-        
     }
 }
-
-//struct AddWatcherView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let watchingItem = WatchItem(urlString: "", value: "", selectors: [])
-//        AddWatcherView(viewModel: AddWatcherViewModel(watchingItem))
-//    }
-//}
-
 
 struct AppButtonStyle: ButtonStyle {
         

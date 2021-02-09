@@ -9,6 +9,9 @@ import SwiftUI
 import WebKit
 import Combine
 
+protocol WebViewStoreDelegate: class {
+    func onLongTap(with message: Any)
+}
 
 class WebViewStore: NSObject, ObservableObject {
     
@@ -16,14 +19,8 @@ class WebViewStore: NSObject, ObservableObject {
         didSet { setupObservers() }
     }
     
-    @Published var query: String = "" {
-        didSet { loadQuery(query) }
-    }
-    
-    @Published var browserState: BrowserState = .initial
-    
-    private var searchEngine = GoogleSearchEngine()
     private var observers: [NSKeyValueObservation] = []
+    weak var delegate: WebViewStoreDelegate?
     
     override init() {
         self.webView = WKWebView()
@@ -68,45 +65,7 @@ class WebViewStore: NSObject, ObservableObject {
         webView = WKWebView(frame: .zero, configuration: configuration)
         webView.allowsLinkPreview = false
         webView.navigationDelegate = self
-//        webView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 13_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 [FBAN/FBIOS;FBDV/iPhone12,1;FBMD/iPhone;FBSN/iOS;FBSV/13.3.1;FBSS/2;FBID/phone;FBLC/en_US;FBOP/5;FBCR/]"
     }
-    
-    
-    func loadQuery(_ query: String) {
-        let provider = SearchRequestProvider(for: query, engine: searchEngine)
-        
-        provider.getURLRequest { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
-            case .failure(let error):
-                self.browserState = .pageNotRechable
-            case .success(let request):
-                self.browserState = .running
-                self.webView.load(request)
-                
-            }
-        }
-    }
-    
-    func goBack() {
-        webView.goBack()
-    }
-    
-    func goForward() {
-        webView.goForward()
-    }
-    
-//    func removeWatcher() {
-//        watchingItem = nil
-//        longTapDetected.toggle()
-//        guard let script = JSStringProvider.removeAllHighlights.script else { return }
-//        webView.evaluateJavaScript(script)
-//    }
-    
-    var currentURL: URL?
-    var isReloaded = false
-
 }
 
 extension WebViewStore: WKScriptMessageHandler  {
@@ -117,21 +76,7 @@ extension WebViewStore: WKScriptMessageHandler  {
         
         switch script {
         case .longPressEvent:
-
-            do {
-                
-                let testable = try TestableWatchItem(decodable: message.body)
-                
-//                let view = UIView()
-//                view.frame.size = CGSize(width: 50, height: 50)
-//                view.center = TapPointHelper(tapPoint: testable.tapPoint.point).convertTatPointIntoGlobvalCoordinates(from: webView)
-//                view.backgroundColor = .red
-//                UIApplication.shared.windows.first!.addSubview(view)
-
-                browserState = .longTapDetected(watchItem: testable)
-            } catch {
-                print(error)
-            }
+            delegate?.onLongTap(with: message.body)
         default:
             return
         }
