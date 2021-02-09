@@ -38,6 +38,7 @@ struct BrowserView: View {
                 ZStack {
 
                     BrowserWebView(webView: webViewStore.webView )
+                        .padding(.bottom, -4)
                     progressView
                 }
                 toolbarView
