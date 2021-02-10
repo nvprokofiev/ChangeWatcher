@@ -17,7 +17,7 @@
 		67F52A6C25C2597E00E37A61 /* BrowserInitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A6B25C2597E00E37A61 /* BrowserInitialView.swift */; };
 		67F52A7525C2643E00E37A61 /* AddWatcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A7425C2643E00E37A61 /* AddWatcherView.swift */; };
 		67F52A7925C270BD00E37A61 /* TestWatcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A7825C270BD00E37A61 /* TestWatcherService.swift */; };
-		67F52A8425C3C74C00E37A61 /* TestableWatchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A8325C3C74C00E37A61 /* TestableWatchItem.swift */; };
+		67F52A8425C3C74C00E37A61 /* JSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A8325C3C74C00E37A61 /* JSItem.swift */; };
 		67F52A8725C3C7AF00E37A61 /* WebViewTapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A8625C3C7AF00E37A61 /* WebViewTapPoint.swift */; };
 		67F52A8B25C3CB1F00E37A61 /* Decodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A8A25C3CB1F00E37A61 /* Decodable+.swift */; };
 		67F52A9525C85DB900E37A61 /* SelectorTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F52A9425C85DB900E37A61 /* SelectorTester.swift */; };
@@ -74,7 +74,7 @@
 		67F52A6B25C2597E00E37A61 /* BrowserInitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserInitialView.swift; sourceTree = "<group>"; };
 		67F52A7425C2643E00E37A61 /* AddWatcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWatcherView.swift; sourceTree = "<group>"; };
 		67F52A7825C270BD00E37A61 /* TestWatcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWatcherService.swift; sourceTree = "<group>"; };
-		67F52A8325C3C74C00E37A61 /* TestableWatchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableWatchItem.swift; sourceTree = "<group>"; };
+		67F52A8325C3C74C00E37A61 /* JSItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSItem.swift; sourceTree = "<group>"; };
 		67F52A8625C3C7AF00E37A61 /* WebViewTapPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewTapPoint.swift; sourceTree = "<group>"; };
 		67F52A8A25C3CB1F00E37A61 /* Decodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+.swift"; sourceTree = "<group>"; };
 		67F52A9425C85DB900E37A61 /* SelectorTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorTester.swift; sourceTree = "<group>"; };
@@ -267,7 +267,7 @@
 				67FC856F25B7E7EF0037F61C /* SearchEngine */,
 				67F52A5C25C247E700E37A61 /* WatchItem.swift */,
 				67FC852125B5DD1F0037F61C /* Watchable.swift */,
-				67F52A8325C3C74C00E37A61 /* TestableWatchItem.swift */,
+				67F52A8325C3C74C00E37A61 /* JSItem.swift */,
 				67F52A8625C3C7AF00E37A61 /* WebViewTapPoint.swift */,
 			);
 			path = Model;
@@ -485,7 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67F52AC225C9B0BB00E37A61 /* HTMLInspector.swift in Sources */,
-				67F52A8425C3C74C00E37A61 /* TestableWatchItem.swift in Sources */,
+				67F52A8425C3C74C00E37A61 /* JSItem.swift in Sources */,
 				67FC857425B7E8360037F61C /* YandexSearchEngine.swift in Sources */,
 				67FC859725B92CBD0037F61C /* WKWebViewConfiguration+.swift in Sources */,
 				67FC854725B5FEF00037F61C /* SearchRequestProvider.swift in Sources */,

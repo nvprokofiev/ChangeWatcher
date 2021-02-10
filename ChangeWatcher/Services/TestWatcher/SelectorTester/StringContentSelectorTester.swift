@@ -8,7 +8,8 @@
 import Foundation
 
 struct StringContentSelectorTester: SelectorTester {
-
+    
+    let testMethod = TestMethod.stringContent
     var parameters: SelectorTesterParameters
     var nextTester: SelectorTester?
 

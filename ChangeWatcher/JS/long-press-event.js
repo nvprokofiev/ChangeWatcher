@@ -348,13 +348,11 @@ document.addEventListener("long-press", function (e) {
 
     selectors = Array.from(selectors);
     
-    let watchItem = {"selectors": selectors, "value": value, "urlString": path};
-
     let clientX = e["detail"]["clientX"];
     let clientY = e["detail"]["clientY"];
     let tapPoint = {"clientX": clientX, "clientY": clientY};
     
-    let message = {"watchItem": watchItem, "tapPoint": tapPoint};
+    let message = {"selectors": selectors, "value": value, "urlString": path, "tapPoint": tapPoint};
     
     element.classList.add('watch-element')
     

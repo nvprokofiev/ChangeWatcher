@@ -12,4 +12,5 @@ protocol Watchable {
     var urlString: String { get }
     var value: String { get }
     var selectors: [String] { get }
+    var testMethod: TestMethod { get }
 }

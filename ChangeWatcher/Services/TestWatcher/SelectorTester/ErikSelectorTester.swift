@@ -9,6 +9,7 @@ import Foundation
 
 struct ErikSelectorTester: SelectorTester {
     
+    let testMethod = TestMethod.headlessBrowser
     var parameters: SelectorTesterParameters
     var nextTester: SelectorTester?
     

@@ -21,7 +21,7 @@ class BrowserViewModel: ObservableObject {
     
     private var anyCancellable: AnyCancellable? = nil
     private var searchEngine = GoogleSearchEngine()
-    private var testItem: TestableWatchItem?
+    private var jsItem: JSItem?
     
     init() {
         webViewStore.delegate = self
@@ -76,21 +76,37 @@ class BrowserViewModel: ObservableObject {
     }
     
     func add() {
-       testSelectors()
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.testSelectors { result in
+                switch result {
+                case .success(let testResult):
+                    let watchItem = self.buildWatchItem(with: testResult)
+                    print(watchItem)
+                    self.state = .running
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+
     }
     
     func cancel() {
-        testItem = nil
+        jsItem = nil
         state = .running
     }
     
-    func testSelectors() {
-        
-        guard let testItem = testItem else { return }
+    private func buildWatchItem(with testResult: (method: TestMethod, selectors: [CSSSelector]))-> WatchItem? {
+        guard let jsItem = jsItem else { return nil }
+        let item = WatchItem(urlString: jsItem.urlString, value: jsItem.value, selectors: testResult.selectors, testMethod: testResult.method)
+        return item
+    }
+    
+    private func testSelectors(_ completion: @escaping (TestSelectorsResult)->()) {
+        guard let item = jsItem else { return }
         state = .testing
-        TestWatcherService.shared.test(testItem.watchItem) { result in
-            
-        }
+        TestWatcherService.shared.test(item) { completion($0) }
     }
 }
 
@@ -98,10 +114,9 @@ extension BrowserViewModel: WebViewStoreDelegate {
     
     func onLongTap(with message: Any) {
         
-        guard let testItem =  try? TestableWatchItem(decodable: message) else { return }
-        self.testItem = testItem
-        let point = convertTapPointIntoGlobvalCoordinates(testItem.tapPoint)
+        guard let jsItem =  try? JSItem(decodable: message) else { return }
+        self.jsItem = jsItem
+        let point = convertTapPointIntoGlobvalCoordinates(jsItem.tapPoint)
         state = .longTapDetected(point: point)
     }
-    
 }

@@ -7,8 +7,10 @@
 
 import UIKit
 
-struct TestableWatchItem: Decodable {
+struct JSItem: Decodable {
     
-    let watchItem: WatchItem
+    var urlString: String
+    var value: String
+    var selectors: [String]
     let tapPoint: WebViewTapPoint
 }
