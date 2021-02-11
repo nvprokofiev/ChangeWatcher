@@ -30,6 +30,19 @@ struct BrowserView: View {
             if case let BrowserState.longTapDetected(point: point) = viewModel.state {
                 AddWatcherView(viewModel: viewModel, at: point)
             }
+            
+            if viewModel.state == .testing {
+                VStack(spacing: 20) {
+                    Text("Testing")
+                        .font(Font.system(size: 20, weight: .bold, design: .rounded))
+                        .foregroundColor(.black)
+                    ActivityIndicatorView(isAnimating: .constant(true))
+                }
+                .frame(width: 180, height: 180)
+                .background(Color.white)
+                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .shadow(radius: 20)
+            }
         }
     }
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum BrowserState {
+enum BrowserState: Equatable {
     case initial
     case testing
     case running // when set to running - remove all highlights

@@ -85,6 +85,7 @@ class BrowserViewModel: ObservableObject {
                     print("✅", watchItem)
                     self.state = .running
                 case .failure(let error):
+                    self.state = .running
                     print(error)
                 }
             }
@@ -106,7 +107,9 @@ class BrowserViewModel: ObservableObject {
     private func testSelectors(_ completion: @escaping (TestSelectorsResult)->()) {
         guard let item = jsItem else { return }
         state = .testing
-        TestWatcherService.shared.test(item) { completion($0) }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05, execute: {
+            TestWatcherService.shared.test(item) { completion($0) }
+        })
     }
 }
 
