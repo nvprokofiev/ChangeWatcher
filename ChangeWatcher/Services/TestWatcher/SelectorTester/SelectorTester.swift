@@ -37,7 +37,7 @@ extension SelectorTester {
                     completion(.failure(error))
                 }
             case .success(let html):
-                SwiftSoupHTMLInspector.shared.inspect(html, for: parameters.selectors, matching: parameters.matchValue) { result in
+                KannaHTMLInspector.shared.inspect(html, for: parameters.selectors, matching: parameters.matchValue) { result in
                     switch result {
                     case .failure(let error):
                         if let nextTester = nextTester {

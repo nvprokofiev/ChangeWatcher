@@ -11,6 +11,8 @@
 		6746F75225CCFEC7003F4909 /* simmerjs.js in Resources */ = {isa = PBXBuildFile; fileRef = 6746F75125CCFEC7003F4909 /* simmerjs.js */; };
 		674FD8B425C07F0100A90939 /* css-selector-generator-v2.js in Resources */ = {isa = PBXBuildFile; fileRef = 674FD8B325C07F0100A90939 /* css-selector-generator-v2.js */; };
 		67535A9425D469880045EFF2 /* TestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67535A9325D469880045EFF2 /* TestMethod.swift */; };
+		67535A9825D4D1B70045EFF2 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = 67535A9725D4D1B70045EFF2 /* Kanna */; };
+		67535A9B25D4D1CE0045EFF2 /* KannaHTMLInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67535A9A25D4D1CE0045EFF2 /* KannaHTMLInspector.swift */; };
 		679A618225C12BF400E10113 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 679A618125C12BF400E10113 /* SwiftSoup */; };
 		679F82E025D30D60005D4960 /* BrowserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679F82DF25D30D60005D4960 /* BrowserState.swift */; };
 		679F82E325D30D76005D4960 /* BrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679F82E225D30D76005D4960 /* BrowserViewModel.swift */; };
@@ -70,6 +72,7 @@
 		6746F75125CCFEC7003F4909 /* simmerjs.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = simmerjs.js; sourceTree = "<group>"; };
 		674FD8B325C07F0100A90939 /* css-selector-generator-v2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "css-selector-generator-v2.js"; sourceTree = "<group>"; };
 		67535A9325D469880045EFF2 /* TestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMethod.swift; sourceTree = "<group>"; };
+		67535A9A25D4D1CE0045EFF2 /* KannaHTMLInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KannaHTMLInspector.swift; sourceTree = "<group>"; };
 		679F82DF25D30D60005D4960 /* BrowserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserState.swift; sourceTree = "<group>"; };
 		679F82E225D30D76005D4960 /* BrowserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewModel.swift; sourceTree = "<group>"; };
 		67F52A5C25C247E700E37A61 /* WatchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchItem.swift; path = ../../../../Downloads/WatchItem.swift; sourceTree = "<group>"; };
@@ -129,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67535A9825D4D1B70045EFF2 /* Kanna in Frameworks */,
 				67FC853B25B5F5460037F61C /* PublicSuffix in Frameworks */,
 				679A618225C12BF400E10113 /* SwiftSoup in Frameworks */,
 			);
@@ -198,6 +202,7 @@
 			children = (
 				67F52AC125C9B0BB00E37A61 /* HTMLInspector.swift */,
 				67F52ABC25C9B08C00E37A61 /* SwiftSoupHTMLInspector.swift */,
+				67535A9A25D4D1CE0045EFF2 /* KannaHTMLInspector.swift */,
 			);
 			path = HTMLInspector;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 			packageProductDependencies = (
 				67FC853A25B5F5460037F61C /* PublicSuffix */,
 				679A618125C12BF400E10113 /* SwiftSoup */,
+				67535A9725D4D1B70045EFF2 /* Kanna */,
 			);
 			productName = ChangeWatcher;
 			productReference = 67FC84E825B53E130037F61C /* ChangeWatcher.app */;
@@ -449,6 +455,7 @@
 			packageReferences = (
 				67FC853925B5F5460037F61C /* XCRemoteSwiftPackageReference "PublicSuffix-Swift" */,
 				679A618025C12BF300E10113 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				67535A9625D4D1B70045EFF2 /* XCRemoteSwiftPackageReference "Kanna" */,
 			);
 			productRefGroup = 67FC84E925B53E130037F61C /* Products */;
 			projectDirPath = "";
@@ -493,6 +500,7 @@
 				67FC859725B92CBD0037F61C /* WKWebViewConfiguration+.swift in Sources */,
 				67FC854725B5FEF00037F61C /* SearchRequestProvider.swift in Sources */,
 				67F52A9E25C85F9300E37A61 /* StringContentSelectorTester.swift in Sources */,
+				67535A9B25D4D1CE0045EFF2 /* KannaHTMLInspector.swift in Sources */,
 				67F52AA125C864E700E37A61 /* Result+.swift in Sources */,
 				67F52AB225C894DB00E37A61 /* LayoutEngine.swift in Sources */,
 				67FC853225B5E5170037F61C /* ToolbarButtonView.swift in Sources */,
@@ -718,6 +726,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		67535A9625D4D1B70045EFF2 /* XCRemoteSwiftPackageReference "Kanna" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tid-kijyun/Kanna";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.4;
+			};
+		};
 		679A618025C12BF300E10113 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup";
@@ -737,6 +753,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		67535A9725D4D1B70045EFF2 /* Kanna */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67535A9625D4D1B70045EFF2 /* XCRemoteSwiftPackageReference "Kanna" */;
+			productName = Kanna;
+		};
 		679A618125C12BF400E10113 /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 679A618025C12BF300E10113 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
