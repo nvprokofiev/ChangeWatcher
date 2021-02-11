@@ -27,7 +27,7 @@ extension SelectorTester {
     }
     
     func test(_ completion: @escaping (TestSelectorsResult) -> Void) {
-
+        print("▶︎", String(describing: Self.self))
         getHTML { result in
             switch result {
             case .failure(let error):
@@ -40,7 +40,11 @@ extension SelectorTester {
                 SwiftSoupHTMLInspector.shared.inspect(html, for: parameters.selectors, matching: parameters.matchValue) { result in
                     switch result {
                     case .failure(let error):
-                        completion(.failure(error))
+                        if let nextTester = nextTester {
+                            nextTester.test(completion)
+                        } else {
+                            completion(.failure(error))
+                        }
                     case .success(let selectors):
                         completion(.success((testMethod, selectors)))
                     }
