@@ -82,7 +82,7 @@ class BrowserViewModel: ObservableObject {
                 switch result {
                 case .success(let testResult):
                     let watchItem = self.buildWatchItem(with: testResult)
-                    print(watchItem)
+                    print("✅", watchItem)
                     self.state = .running
                 case .failure(let error):
                     print(error)
@@ -115,6 +115,7 @@ extension BrowserViewModel: WebViewStoreDelegate {
     func onLongTap(with message: Any) {
         
         guard let jsItem =  try? JSItem(decodable: message) else { return }
+        jsItem.selectors.forEach{ print($0, "\n")}
         self.jsItem = jsItem
         let point = convertTapPointIntoGlobvalCoordinates(jsItem.tapPoint)
         state = .longTapDetected(point: point)

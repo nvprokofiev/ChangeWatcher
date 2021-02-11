@@ -28,22 +28,28 @@ class SwiftSoupHTMLInspector: HTMLInspector {
                 let elements = try body.select(selector)
                 
                 guard elements.count <= 1 else {
-                    return print(selector, TestWatcherError.multipleValuesFound)
+                    return print("❌",  selector, TestWatcherError.multipleValuesFound, "\n")
                 }
                 
                 guard let element = elements.first() else {
-                    return print(selector, TestWatcherError.valueNotFound)
+                    return print("❌", selector, TestWatcherError.valueNotFound, "\n")
                 }
                 
                 guard let testValue = try? element.text() else {
-                    return print(selector, TestWatcherError.unableToGetOuterHTML)
+                    return print("❌", selector, TestWatcherError.unableToGetOuterHTML, "\n")
                 }
                 
                 guard testValue.lowercased() == value.lowercased() else {
-                    return print(selector, TestWatcherError.mismatchedValue(value: value, newValue: testValue))
+                    return print("❌", selector, TestWatcherError.mismatchedValue(value: value, newValue: testValue), "\n")
                 }
                 
                 succedSelectors.append(selector)
+            }
+            
+            guard !succedSelectors.isEmpty else {
+                print("❌ TEST FAILED ❌")
+                completion(.failure(.testFailed))
+                return
             }
             
             completion(.success(succedSelectors))

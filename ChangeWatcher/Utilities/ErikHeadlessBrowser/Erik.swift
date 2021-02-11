@@ -68,9 +68,15 @@ open class Erik {
         return layoutEngine.title
     }
 
-    // Go to specific url
+    // Go to specific url with delay
+    open func visit(url: Foundation.URL, with delay: Double, completionHandler: DocumentCompletionHandler?) {
+        layoutEngine.browse(url: url, with: delay) {[unowned self] (object, error) -> Void in
+            self.publish(content: object, error: error, completionHandler: completionHandler)
+        }
+    }
+    
     open func visit(url: Foundation.URL, completionHandler: DocumentCompletionHandler?) {
-        layoutEngine.browse(url: url) {[unowned self] (object, error) -> Void in
+        layoutEngine.browse(url: url, with: 0.0) {[unowned self] (object, error) -> Void in
             self.publish(content: object, error: error, completionHandler: completionHandler)
         }
     }
@@ -86,14 +92,14 @@ open class Erik {
     
     // Go to specific url using url request
     open func load(urlRequest: Foundation.URLRequest, completionHandler: DocumentCompletionHandler?) {
-        layoutEngine.browse(urlRequest: urlRequest) {[unowned self] (object, error) -> Void in
+        layoutEngine.browse(urlRequest: urlRequest, with: 0.0) {[unowned self] (object, error) -> Void in
             self.publish(content: object, error: error, completionHandler: completionHandler)
         }
     }
 
     // Get current content
     open func currentContent(completionHandler: DocumentCompletionHandler?) {
-        layoutEngine.currentContent {[unowned self] (object, error) -> Void in
+        layoutEngine.currentContent(delay: 0) {[unowned self] (object, error) -> Void in
             self.publish(content: object, error: error, completionHandler: completionHandler)
         }
     }
@@ -158,11 +164,11 @@ extension Erik {
     // Shared instance used for static functions
     public static let sharedInstance = Erik()
     
-    public static func visit(url: Foundation.URL, completionHandler: DocumentCompletionHandler?) {
-        Erik.sharedInstance.visit(url: url, completionHandler: completionHandler)
+    public static func visit(url: Foundation.URL, with delay: Double, completionHandler: DocumentCompletionHandler?) {
+        Erik.sharedInstance.visit(url: url, with: delay, completionHandler: completionHandler)
     }
 
-    public static func visit(urlString: String, completionHandler: DocumentCompletionHandler?) {
+    public static func visit(urlString: String, with delay: Double, completionHandler: DocumentCompletionHandler?) {
         Erik.sharedInstance.visit(urlString: urlString, completionHandler: completionHandler)
     }
 

@@ -16,6 +16,7 @@ enum TestWatcherError: Error {
     case valueNotFound
     case multipleValuesFound
     case unableToGetOuterHTML
+    case testFailed
     case mismatchedValue(value: String, newValue: String)
     case other(Error)
     

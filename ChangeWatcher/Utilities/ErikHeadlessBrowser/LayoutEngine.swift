@@ -29,14 +29,14 @@ public protocol JavaScriptEvaluator {
 }
 
 public protocol URLBrowser {
-    func browse(url: URL, completionHandler: CompletionHandler?)
-    func browse(urlRequest: URLRequest, completionHandler: CompletionHandler?)
+    func browse(url: URL, with delay: Double, completionHandler: CompletionHandler?)
+    func browse(urlRequest: URLRequest, with delay: Double, completionHandler: CompletionHandler?)
     
     func load(htmlString: String, baseURL: URL?)
     
     var url: URL? {get}
     var title: String? {get}
-    func currentContent(completionHandler: CompletionHandler?)
+    func currentContent(delay: Double, completionHandler: CompletionHandler?)
     
     func goBack()
     func goForward()
@@ -200,16 +200,16 @@ open class LayoutEngineNavigationDelegate: NSObject, WKNavigationDelegate, Navig
 // MARK: URLBrowser
 extension WebKitLayoutEngine {
 
-   @nonobjc public func browse(url: Foundation.URL, completionHandler: CompletionHandler?) {
+    @nonobjc public func browse(url: Foundation.URL, with delay: Double, completionHandler: CompletionHandler?) {
         let request = URLRequest(url: url)
-        self.browse(urlRequest: request, completionHandler: completionHandler)
+        self.browse(urlRequest: request, with: delay, completionHandler: completionHandler)
     }
     
-    @nonobjc public func browse(urlRequest: Foundation.URLRequest, completionHandler: CompletionHandler?) {
+    @nonobjc public func browse(urlRequest: Foundation.URLRequest, with delay: Double, completionHandler: CompletionHandler?) {
         self.firstPageLoaded = true
         self.navigable?.navigate = true
         webView.load(urlRequest)
-        self.currentContent(completionHandler: completionHandler)
+        self.currentContent(delay: delay, completionHandler: completionHandler)
     }
 
     public func load(htmlString: String, baseURL: URL?) {
@@ -243,7 +243,7 @@ extension WebKitLayoutEngine {
         self.webView.reload()
     }
 
-    public func currentContent(completionHandler: CompletionHandler?) {
+    public func currentContent(delay: Double, completionHandler: CompletionHandler?) {
         waitLoadingQueue.async { [unowned self] in
             self.handleLoadRequestCompletion { error in
                 if let error = error  {
@@ -251,7 +251,7 @@ extension WebKitLayoutEngine {
                         completionHandler?(nil, error)
                     }
                 } else {
-                    self.handleHTML(completionHandler)
+                    self.handleHTML(delay: delay, completionHandler)
                 }
             }
         }
@@ -273,12 +273,12 @@ extension WebKitLayoutEngine {
         completionHandler(nil)
     }
     
-    fileprivate func handleHTML(_ completionHandler: CompletionHandler?) {
+    fileprivate func handleHTML(delay: Double, _ completionHandler: CompletionHandler?) {
         
-        #warning("Handle delay")
-        javaScriptQueue.asyncAfter(deadline: .now() + 1.5) { [unowned self] in
+        javaScriptQueue.asyncAfter(deadline: .now() + delay) { [unowned self] in
          
             self.webView.evaluateJavaScript(self.javascriptToGetContent.javascript) { [unowned self] (obj, error) -> Void in
+                
                 self.javaScriptQueue.async {
                     completionHandler?(obj, error)
                 }
