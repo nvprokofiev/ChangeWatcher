@@ -9,6 +9,6 @@ import Foundation
 
 enum TestMethod: Int {
     case stringContent
-    case headlessBrowser
-    case headlessBrowserWithDelay
+    case erik
+    case wkZombie
 }

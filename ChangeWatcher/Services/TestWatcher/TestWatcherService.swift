@@ -23,11 +23,11 @@ class TestWatcherService {
         let params = SelectorTesterParameters(url: url, matchValue: item.value, selectors: item.selectors)
         
         var stringContentTester = StringContentSelectorTester(parameters: params)
-        var erikSelectorTester = ErikSelectorTester(parameters: params, delay: 1.5)
+        var wkZombieSelectorTester = WKZombieSelectorTester(parameters: params)
 //        var delayedTester = ErikSelectorTester(parameters: params, delay: 6.0)
 
 //        delayedTester.setNext(erikSelectorTester)
-        stringContentTester.setNext(erikSelectorTester)
+        stringContentTester.setNext(wkZombieSelectorTester)
 
         stringContentTester.test { completion($0) }
     }

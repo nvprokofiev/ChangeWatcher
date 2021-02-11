@@ -13,6 +13,7 @@
 		67535A9425D469880045EFF2 /* TestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67535A9325D469880045EFF2 /* TestMethod.swift */; };
 		67535A9825D4D1B70045EFF2 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = 67535A9725D4D1B70045EFF2 /* Kanna */; };
 		67535A9B25D4D1CE0045EFF2 /* KannaHTMLInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67535A9A25D4D1CE0045EFF2 /* KannaHTMLInspector.swift */; };
+		675C720125D59D9500133B1B /* WKZombieSelectorTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675C720025D59D9500133B1B /* WKZombieSelectorTester.swift */; };
 		679A618225C12BF400E10113 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 679A618125C12BF400E10113 /* SwiftSoup */; };
 		679F82E025D30D60005D4960 /* BrowserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679F82DF25D30D60005D4960 /* BrowserState.swift */; };
 		679F82E325D30D76005D4960 /* BrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679F82E225D30D76005D4960 /* BrowserViewModel.swift */; };
@@ -65,14 +66,18 @@
 		67FC859725B92CBD0037F61C /* WKWebViewConfiguration+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FC859525B92CBD0037F61C /* WKWebViewConfiguration+.swift */; };
 		67FC859C25B932190037F61C /* long-press-event.js in Resources */ = {isa = PBXBuildFile; fileRef = 67FC859B25B932190037F61C /* long-press-event.js */; };
 		67FC85B025BF5AA70037F61C /* optimal-select.js in Resources */ = {isa = PBXBuildFile; fileRef = 67FC85AF25BF5AA70037F61C /* optimal-select.js */; };
+		6F41BEE16B3A090F83947AAE /* Pods_ChangeWatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E500376E10998C56D5669E /* Pods_ChangeWatcher.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14D1EB7EC10D3851D19F1B3B /* Pods-ChangeWatcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChangeWatcher.debug.xcconfig"; path = "Target Support Files/Pods-ChangeWatcher/Pods-ChangeWatcher.debug.xcconfig"; sourceTree = "<group>"; };
+		36E500376E10998C56D5669E /* Pods_ChangeWatcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChangeWatcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6746F74E25CCFD2B003F4909 /* dompath.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dompath.js; sourceTree = "<group>"; };
 		6746F75125CCFEC7003F4909 /* simmerjs.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = simmerjs.js; sourceTree = "<group>"; };
 		674FD8B325C07F0100A90939 /* css-selector-generator-v2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "css-selector-generator-v2.js"; sourceTree = "<group>"; };
 		67535A9325D469880045EFF2 /* TestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMethod.swift; sourceTree = "<group>"; };
 		67535A9A25D4D1CE0045EFF2 /* KannaHTMLInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KannaHTMLInspector.swift; sourceTree = "<group>"; };
+		675C720025D59D9500133B1B /* WKZombieSelectorTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKZombieSelectorTester.swift; sourceTree = "<group>"; };
 		679F82DF25D30D60005D4960 /* BrowserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserState.swift; sourceTree = "<group>"; };
 		679F82E225D30D76005D4960 /* BrowserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewModel.swift; sourceTree = "<group>"; };
 		67F52A5C25C247E700E37A61 /* WatchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchItem.swift; path = ../../../../Downloads/WatchItem.swift; sourceTree = "<group>"; };
@@ -125,6 +130,7 @@
 		67FC859525B92CBD0037F61C /* WKWebViewConfiguration+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WKWebViewConfiguration+.swift"; sourceTree = "<group>"; };
 		67FC859B25B932190037F61C /* long-press-event.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "long-press-event.js"; sourceTree = "<group>"; };
 		67FC85AF25BF5AA70037F61C /* optimal-select.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "optimal-select.js"; sourceTree = "<group>"; };
+		DC38A2993D7C1AD36C45A885 /* Pods-ChangeWatcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChangeWatcher.release.xcconfig"; path = "Target Support Files/Pods-ChangeWatcher/Pods-ChangeWatcher.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,12 +141,21 @@
 				67535A9825D4D1B70045EFF2 /* Kanna in Frameworks */,
 				67FC853B25B5F5460037F61C /* PublicSuffix in Frameworks */,
 				679A618225C12BF400E10113 /* SwiftSoup in Frameworks */,
+				6F41BEE16B3A090F83947AAE /* Pods_ChangeWatcher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		302693B635BA27D7A19B60D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36E500376E10998C56D5669E /* Pods_ChangeWatcher.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		679F82DE25D30D47005D4960 /* Browser */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +199,7 @@
 				67F52ACA25C9B37100E37A61 /* SelectorTesterParameters.swift */,
 				67F52A9D25C85F9300E37A61 /* StringContentSelectorTester.swift */,
 				67F52AAC25C88DD900E37A61 /* ErikSelectorTester.swift */,
+				675C720025D59D9500133B1B /* WKZombieSelectorTester.swift */,
 			);
 			path = SelectorTester;
 			sourceTree = "<group>";
@@ -212,6 +228,8 @@
 			children = (
 				67FC84EA25B53E130037F61C /* ChangeWatcher */,
 				67FC84E925B53E130037F61C /* Products */,
+				7D4B21F2EA68341E5920889B /* Pods */,
+				302693B635BA27D7A19B60D3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -345,8 +363,8 @@
 		67FC855F25B6A1460037F61C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				67F52A7B25C271B800E37A61 /* TestWatcher */,
 				67F52A6325C24A6F00E37A61 /* Networking */,
+				67F52A7B25C271B800E37A61 /* TestWatcher */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -404,6 +422,15 @@
 			path = Style;
 			sourceTree = "<group>";
 		};
+		7D4B21F2EA68341E5920889B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				14D1EB7EC10D3851D19F1B3B /* Pods-ChangeWatcher.debug.xcconfig */,
+				DC38A2993D7C1AD36C45A885 /* Pods-ChangeWatcher.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -411,9 +438,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 67FC84F725B53E150037F61C /* Build configuration list for PBXNativeTarget "ChangeWatcher" */;
 			buildPhases = (
+				C90FD169330DFE492D4E968C /* [CP] Check Pods Manifest.lock */,
 				67FC84E425B53E130037F61C /* Sources */,
 				67FC84E525B53E130037F61C /* Frameworks */,
 				67FC84E625B53E130037F61C /* Resources */,
+				5123D2FA7797CCDBCCC77788 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -489,6 +518,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5123D2FA7797CCDBCCC77788 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChangeWatcher/Pods-ChangeWatcher-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChangeWatcher/Pods-ChangeWatcher-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChangeWatcher/Pods-ChangeWatcher-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C90FD169330DFE492D4E968C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChangeWatcher-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		67FC84E425B53E130037F61C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -504,6 +575,7 @@
 				67F52AA125C864E700E37A61 /* Result+.swift in Sources */,
 				67F52AB225C894DB00E37A61 /* LayoutEngine.swift in Sources */,
 				67FC853225B5E5170037F61C /* ToolbarButtonView.swift in Sources */,
+				675C720125D59D9500133B1B /* WKZombieSelectorTester.swift in Sources */,
 				67535A9425D469880045EFF2 /* TestMethod.swift in Sources */,
 				67FC852625B5DDD60037F61C /* BrowserSearchView.swift in Sources */,
 				67F52ACB25C9B37100E37A61 /* SelectorTesterParameters.swift in Sources */,
@@ -660,6 +732,7 @@
 		};
 		67FC84F825B53E150037F61C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14D1EB7EC10D3851D19F1B3B /* Pods-ChangeWatcher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -682,6 +755,7 @@
 		};
 		67FC84F925B53E150037F61C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC38A2993D7C1AD36C45A885 /* Pods-ChangeWatcher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

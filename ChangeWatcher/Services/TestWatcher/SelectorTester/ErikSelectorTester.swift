@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct ErikSelectorTester: SelectorTester {
+class ErikSelectorTester: SelectorTester {
 
-    let testMethod = TestMethod.headlessBrowser
+    let testMethod = TestMethod.erik
     var parameters: SelectorTesterParameters
     var nextTester: SelectorTester?
     private let delay: Double
