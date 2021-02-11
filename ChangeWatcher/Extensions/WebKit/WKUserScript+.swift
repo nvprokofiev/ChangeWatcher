@@ -22,6 +22,8 @@ extension WKUserScript {
         case optimalSelect
         case cssSelectorGenerator
         case cssSelectorGeneratorV2
+        case domapth
+        case simmerjs
 
     
         var name: String { return rawValue }
@@ -47,7 +49,10 @@ extension WKUserScript {
                 return "finder"
             case .optimalSelect:
                 return "optimal-select"
-
+            case .domapth:
+                return "dompath"
+            case .simmerjs:
+                return "simmerjs"
             }
         }
         
@@ -75,7 +80,7 @@ extension WKUserScript {
         
         private var injectionTime: WKUserScriptInjectionTime {
             switch self {
-            case .cssSelectorGenerator, .cssSelectorGeneratorV2, .optimalSelect, .finder:
+            case .cssSelectorGenerator, .cssSelectorGeneratorV2, .optimalSelect, .finder, .domapth, .simmerjs:
                 return .atDocumentStart
             default:
                 return .atDocumentEnd

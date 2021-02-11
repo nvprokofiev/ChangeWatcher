@@ -336,15 +336,15 @@ document.addEventListener("long-press", function (e) {
     let optimalSelector = OptimalSelect.getSelector(element);
     let finderSelector = finder(element);
     
-//    var dompathSelector = dompath(element).toCSS();
-//    let simmerjsSelector = SimmerJS.getSelector(element);
+    var dompathSelector = dompath(element).toCSS();
+    let simmerjsSelector = SimmerJS.getSelector(element);
 
 
     let value = element.innerText.replace(/(\r\n|\n|\r)/gm, "").trim();
     let path = window.location.href;
     let faviconPath = path + "/favicon.ico";
 
-    var selectors = new Set([selectorV1, selectorV2, optimalSelector, finderSelector]);
+    var selectors = new Set([selectorV1, selectorV2, optimalSelector, finderSelector, dompathSelector, simmerjsSelector]);
 
     selectors = Array.from(selectors);
     
